@@ -14,7 +14,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class PageAddNote extends Fenetre {
-    private JPanel PanelMain;
+    private JPanel PanelMain1;
     private JComboBox comboxListeEtudiant;
     private JComboBox comboBoxMatiere;
     private JLabel labelEtu;
@@ -42,7 +42,7 @@ public class PageAddNote extends Fenetre {
     }
     public PageAddNote( Responsable user) {
         super("Ajouter une note", user);
-        this.setContentPane(PanelMain);
+        this.setContentPane(PanelMain1);
 
         _updateListEtudiant();
         _updateListMatiere();

@@ -47,10 +47,11 @@ public class CoursDao extends BaseDao implements ICoursDao
 	public int update(Cours cours) throws DaoException {
 		connexion();
 		try {
-			String sql = "UPDATE `cours` SET `theme`= ?,`nb_heures`= ?";
+			String sql = "UPDATE `cours` SET `theme`= ?,`nb_heures`= ? WHERE  `id_cours`= ?";
 			BaseDao.setPs(BaseDao.getCn().prepareStatement(sql));
 			BaseDao.getPs().setString(1, cours.getTheme());
 			BaseDao.getPs().setInt(2, cours.getNbHeures());
+			BaseDao.getPs().setInt(3, cours.getId());
 
 			BaseDao.setResult(BaseDao.getPs().executeUpdate());
 		} catch (SQLException e) {
@@ -88,7 +89,9 @@ public class CoursDao extends BaseDao implements ICoursDao
 			BaseDao.getPs().setInt(1, id);
 			BaseDao.setRs(BaseDao.getPs().executeQuery());
 			while (getRs().next()) {
-				return new Cours(getRs().getInt("id_cours"), getRs().getString("theme"), getRs().getInt("nb_heures"));
+				return new Cours(getRs().getInt("id_cours"),
+						getRs().getString("theme"),
+						getRs().getInt("nb_heures"));
 			}
 		} catch (SQLException e) {
 			throw new CRUDException(e, Cours.class.getName(), "Get");

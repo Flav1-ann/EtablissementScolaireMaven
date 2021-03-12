@@ -22,7 +22,7 @@ public class PageAuthentification extends Fenetre {
     private JButton btn_quitter;
     private JTextField input_mail;
     private JPasswordField input_mdp;
-    private JPanel panelMain;
+    private JPanel panelMain1;
     private JLabel erreurLabel;
     /**
      * The constant VALID_EMAIL_ADDRESS_REGEX.
@@ -57,7 +57,7 @@ public class PageAuthentification extends Fenetre {
 
         ResponsableService responsableService = new ResponsableService();
 
-        this.setContentPane(panelMain);
+        this.setContentPane(panelMain1);
 
         this.btn_connexion.addActionListener(e -> {
 

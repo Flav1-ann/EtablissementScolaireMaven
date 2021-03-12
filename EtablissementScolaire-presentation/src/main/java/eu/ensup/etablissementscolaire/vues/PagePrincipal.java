@@ -6,19 +6,15 @@ import eu.ensup.etablissementscolaire.Responsable;
 import eu.ensup.etablissementscolaire.exception.coursExceptions.GetAllCoursServiceException;
 import eu.ensup.etablissementscolaire.exception.coursExceptions.InscriptionCoursServiceException;
 import eu.ensup.etablissementscolaire.exception.etudiantExceptions.GetAllEtudiantServiceException;
-import eu.ensup.etablissementscolaire.vues.PageAssocierEtudiant;
 
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.sql.SQLException;
 
 /**
  * The type Page principal.
  */
 public class PagePrincipal  extends Fenetre{
-    private JPanel panelMain;
+    private JPanel panelMain1;
     private JButton retourButton;
     private JButton btn_lister;
     private JButton btn_creer;
@@ -36,7 +32,7 @@ public class PagePrincipal  extends Fenetre{
      */
     public PagePrincipal(Responsable user) {
         super("Accueil",user);
-        this.setContentPane(panelMain);
+        this.setContentPane(panelMain1);
 
         if (!(PagePrincipal.super.user instanceof Directeur)){
             this.btn_lister.setVisible(false);

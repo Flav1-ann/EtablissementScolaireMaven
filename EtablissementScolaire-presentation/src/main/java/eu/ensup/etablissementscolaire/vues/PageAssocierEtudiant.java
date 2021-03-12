@@ -8,9 +8,6 @@ import eu.ensup.etablissementscolaire.exception.coursExceptions.InscriptionCours
 import eu.ensup.etablissementscolaire.exception.etudiantExceptions.GetAllEtudiantServiceException;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +15,7 @@ import java.util.List;
  * The type Page associer etudiant.
  */
 public class PageAssocierEtudiant extends Fenetre {
-    private JPanel panelMain;
+    private JPanel panelMain1;
     private JLabel titrePageAssocier;
     private JComboBox comboBoxCours;
     private JComboBox comboxListeEtudiant;
@@ -56,7 +53,7 @@ public class PageAssocierEtudiant extends Fenetre {
     public PageAssocierEtudiant(Responsable user) throws InscriptionCoursServiceException, GetAllCoursServiceException, GetAllEtudiantServiceException {
         super("Inscrire un étudiant pour un cour",user);
 
-        this.setContentPane(panelMain);
+        this.setContentPane(panelMain1);
 
         _updateListEtudiant();
         _updateListCours();
@@ -127,4 +124,7 @@ public class PageAssocierEtudiant extends Fenetre {
         }
     }
 
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
+    }
 }

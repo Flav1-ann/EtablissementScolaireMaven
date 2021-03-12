@@ -103,6 +103,7 @@ public class EtudiantDao extends BaseDao implements IEtudiantDao {
 			getPs().setInt(1, id);
 			setRs(getPs().executeQuery());
 			while (getRs().next()) {
+				etudiant.setId(getRs().getInt("id_personne"));
 				etudiant.setDateNaissance(getRs().getDate("date_naissance"));
 				etudiant.setNom(getRs().getString("nom"));
 				etudiant.setPrenom(getRs().getString("prenom"));

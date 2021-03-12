@@ -11,7 +11,6 @@ import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableModel;
 
-import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +22,7 @@ public class PageListing extends Fenetre
 {
     private JButton Btn_retour;
     private JTable tab_etudiants;
-    private JPanel panelMain;
+    private JPanel panelMain1;
     private JLabel label_count;
     private JScrollPane scrollPane;
 
@@ -35,7 +34,7 @@ public class PageListing extends Fenetre
      */
     public PageListing(Responsable user) throws GetAllEtudiantServiceException {
         super("Listing",user);
-        this.setContentPane(panelMain);
+        this.setContentPane(panelMain1);
 
         SimpleDateFormat sdf = new SimpleDateFormat(
                 "dd-MM-yyyy");

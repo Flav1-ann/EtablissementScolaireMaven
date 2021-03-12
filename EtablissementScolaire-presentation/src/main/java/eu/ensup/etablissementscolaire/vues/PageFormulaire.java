@@ -18,7 +18,7 @@ import java.util.Calendar;
  * The type Page formulaire.
  */
 public class PageFormulaire extends  Fenetre {
-    private JPanel panelMain;
+    private JPanel panelMain1;
     private JButton enregistrerButton;
     private JButton retourButton;
     private JTextField input_nom;
@@ -46,7 +46,7 @@ public class PageFormulaire extends  Fenetre {
         dateChooser.setDateFormatString("dd/MM/yyyy");
         panelCalendrier.add(dateChooser);
         EtudiantService etudiantService = new EtudiantService();
-        this.setContentPane(panelMain);
+        this.setContentPane(panelMain1);
         retourButton.addActionListener(e -> {
             new PagePrincipal(user).setVisible(true);
             PageFormulaire.super.setVisible(false);

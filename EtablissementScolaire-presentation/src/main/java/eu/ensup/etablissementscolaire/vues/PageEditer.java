@@ -11,7 +11,6 @@ import eu.ensup.etablissementscolaire.exception.etudiantExceptions.UpdateEtudian
 
 
 import javax.swing.*;
-import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -22,7 +21,7 @@ public class PageEditer extends Fenetre {
     private JButton btn_supprimer;
     private JLabel titre2;
     private JPanel panel1;
-    private JPanel panelMain;
+    private JPanel panelMain1;
     private JComboBox comboBox;
     private JButton modifierButton;
     private JButton btn_retour;
@@ -49,7 +48,7 @@ public class PageEditer extends Fenetre {
         dateChooser= new JDateChooser(cld.getTime());
         input_dateNaissance.add(dateChooser);
         dateChooser.setDateFormatString("dd/MM/yyyy");
-        this.setContentPane(panelMain);
+        this.setContentPane(panelMain1);
 
 
         final Etudiant[] etudiantSelected = new Etudiant[1];

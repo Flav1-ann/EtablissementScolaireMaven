@@ -5,12 +5,10 @@ import eu.ensup.etablissementscolaire.exceptions.DaoException;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
+import org.mockito.*;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.sql.Date;
@@ -18,22 +16,25 @@ import java.util.HashSet;
 import java.util.Set;
 
 import static org.mockito.Mockito.*;
-
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
-public class EtudiantServiceTest {
+public class TestSansInjection {
 
-    @Mock
     IEtudiantDao mockDao;
-
-    @InjectMocks
     EtudiantService service;
+
+    @Before
+    public void init() {
+        mockDao = Mockito.mock(IEtudiantDao.class);
+        service = new EtudiantService(mockDao);
+    }
 
     @Test
     @DisplayName("Tout les etudiant")
     public void FindAllEtudiantTest() throws DaoException, GetAllEtudiantServiceException {
+
+
 
         Set<Etudiant> setEtudiant = new HashSet<Etudiant>() {{
             add(new Etudiant("4","Annaix"+Math.random()+"@gmail.com","24 b"

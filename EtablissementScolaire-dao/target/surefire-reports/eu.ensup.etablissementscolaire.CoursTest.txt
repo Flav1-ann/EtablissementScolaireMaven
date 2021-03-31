@@ -1,22 +1,22 @@
 -------------------------------------------------------------------------------
 Test set: eu.ensup.etablissementscolaire.CoursTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.279 s <<< FAILURE! - in eu.ensup.etablissementscolaire.CoursTest
-deleteCoursTest(eu.ensup.etablissementscolaire.CoursTest)  Time elapsed: 0.2 s  <<< FAILURE!
+Tests run: 5, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.305 s <<< FAILURE! - in eu.ensup.etablissementscolaire.CoursTest
+deleteCoursTest(eu.ensup.etablissementscolaire.CoursTest)  Time elapsed: 0.218 s  <<< FAILURE!
 java.lang.AssertionError: 
 
 Expected: <3>
      but: was <4>
 	at eu.ensup.etablissementscolaire.CoursTest.deleteCoursTest(CoursTest.java:44)
 
-addCoursTest(eu.ensup.etablissementscolaire.CoursTest)  Time elapsed: 0.015 s  <<< FAILURE!
+addCoursTest(eu.ensup.etablissementscolaire.CoursTest)  Time elapsed: 0.016 s  <<< FAILURE!
 java.lang.AssertionError: 
 
 Expected: is <5>
      but: was <4>
 	at eu.ensup.etablissementscolaire.CoursTest.addCoursTest(CoursTest.java:36)
 
-FindAllCoursTest(eu.ensup.etablissementscolaire.CoursTest)  Time elapsed: 0.005 s  <<< FAILURE!
+FindAllCoursTest(eu.ensup.etablissementscolaire.CoursTest)  Time elapsed: 0.008 s  <<< FAILURE!
 java.lang.AssertionError: 
 
 Expected: a collection with size <3>

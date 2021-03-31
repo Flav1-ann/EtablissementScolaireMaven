@@ -12,7 +12,7 @@ public class EtudiantsTests {
 
     static private  EtudiantDao et = new EtudiantDao();
 
-    @Test
+   /* @Test
     @DisplayName("Tout les etudiant")
     public void FindAllEtudiantTest() throws DaoException {
         int taille = et.getAll().size();
@@ -51,6 +51,6 @@ public class EtudiantsTests {
     public void getOneEtudiantTest() throws DaoException {
         Etudiant  etudiant=  et.get(15);
         assertEquals("24 b",etudiant.getAdresse());
-    }
+    }*/
 
 }

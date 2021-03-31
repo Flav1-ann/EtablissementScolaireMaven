@@ -1,9 +1,11 @@
 package eu.ensup.etablissementscolaire;
 
+import eu.ensup.etablissementscolaire.exception.ServiceException;
+import eu.ensup.etablissementscolaire.exception.etudiantExceptions.GetEtudiantServiceException;
 import eu.ensup.etablissementscolaire.exceptions.DaoException;
+import org.junit.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
@@ -14,39 +16,30 @@ import java.sql.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@RunWith(MockitoJUnitRunner.class)
 public class SpyEtudiantService {
 
     @Spy
-    IEtudiantDao dao;
-
-    @BeforeEach
-    public void beforeEach()
-    {
-        MockitoAnnotations.initMocks(this);
-    }
+    IEtudiantService service;
 
     @Test
-    public void testGetOneUtilisateur() throws DaoException {
+    public void testGetOneUtilisateur() throws DaoException, ServiceException {
 
+        //Subbing
         Mockito.doReturn(new Etudiant(2,"name","Annaix"+Math.random()+"@gmail.com","24 b"
-                ,"24 b","0252154785","","",new Date( new java.util.Date().getTime()))).when(dao).get(2);
+                ,"24 b","0252154785","","",new Date( new java.util.Date().getTime()))).when(service).get(15);
 
-        Mockito.doReturn(new Etudiant(2,"name","Annaix"+Math.random()+"@gmail.com","24 b"
-                ,"24 b","0252154785","","",new Date( new java.util.Date().getTime()))).when(dao).get(3);
-
-        Etudiant et = dao.get(2);
-        Etudiant et3 = dao.get(2);
+        Etudiant et = service.get(15);
 
         assertEquals(et.getNom(), "name");
 
-       Mockito.verify(dao, Mockito.times(2)).get(2);
-
+        Mockito.verify(service, Mockito.times(1)).get(15);
     }
 
     @AfterEach
     public void afterEach()
     {
-        dao = null;
+        service = null;
     }
 
 }

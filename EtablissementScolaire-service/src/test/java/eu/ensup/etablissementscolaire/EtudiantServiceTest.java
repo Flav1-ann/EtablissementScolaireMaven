@@ -46,7 +46,7 @@ public class EtudiantServiceTest {
 
         when(mockDao.getAll()).thenReturn(setEtudiant);
 
-        Set<Etudiant> etudiantList = service.getAll();
+        Set<Etudiant> etudiantList = mockDao.getAll();
 
         assertEquals(3,etudiantList.size());
         verify(mockDao).getAll();

@@ -27,6 +27,9 @@ public class EtudiantService implements IEtudiantService{
     public EtudiantService(IEtudiantDao etudiantDao) {
         this.etudiantDao = etudiantDao;
     }
+    public EtudiantService(EtudiantDao etudiantDao) {
+        this.etudiantDao = etudiantDao;
+    }
 
     @Override
     public int create(Etudiant etudiant) throws AddEtudiantServiceException, CredentialException {

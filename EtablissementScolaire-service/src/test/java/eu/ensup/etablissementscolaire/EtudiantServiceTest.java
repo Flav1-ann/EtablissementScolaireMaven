@@ -3,15 +3,13 @@ package eu.ensup.etablissementscolaire;
 import eu.ensup.etablissementscolaire.exception.etudiantExceptions.GetAllEtudiantServiceException;
 import eu.ensup.etablissementscolaire.exceptions.DaoException;
 import org.junit.Before;
-import org.junit.Test;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.sql.Date;
 import java.util.HashSet;
@@ -22,7 +20,7 @@ import static org.mockito.Mockito.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@RunWith(MockitoJUnitRunner.class)
+@ExtendWith(MockitoExtension.class)
 public class EtudiantServiceTest {
 
     @Mock

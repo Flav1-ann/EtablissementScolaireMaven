@@ -1,2 +1,6 @@
 /.idea/
 /EtablissementScolaire-dao/.idea/
+*.iml
+*target*
+/target/
+/target

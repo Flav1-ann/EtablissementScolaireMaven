@@ -17,7 +17,7 @@ import java.sql.Date;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
-public class SpyEtudiantService {
+public class SpyEtudiantServiceTest {
 
     @Spy
     IEtudiantService service;

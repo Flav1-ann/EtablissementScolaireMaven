@@ -1,8 +1,12 @@
 package eu.ensup.etablissementscolaire;
 
 import eu.ensup.etablissementscolaire.exceptions.DaoException;
+import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.runner.RunWith;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.contains;
@@ -13,11 +17,13 @@ import static org.hamcrest.core.IsInstanceOf.instanceOf;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+
 public class CoursTest {
 
-   /* static private CoursDao _cours = new CoursDao();
+    static private CoursDao _cours = new CoursDao();
 
     @Test
+    @Ignore
     @DisplayName("Tout les Cours")
     public void FindAllCoursTest() throws DaoException {
         //juint
@@ -27,6 +33,8 @@ public class CoursTest {
         //hamcrest
         assertThat(_cours.getAll(), hasSize(3));
     }
+
+    @Ignore
     @Test
     @DisplayName("Ajouter un Cours")
     public void addCoursTest() throws DaoException {
@@ -35,6 +43,8 @@ public class CoursTest {
         int tailleAfterIns = _cours.getAll().size();
         assertThat(tailleAfterIns,is(tailleBeforeIns+1));
     }
+
+    @Ignore
     @Test
     @DisplayName("Supprimer un Cours")
     public void deleteCoursTest() throws DaoException {
@@ -44,6 +54,7 @@ public class CoursTest {
         assertThat(tailleAfterIns,equalTo(tailleBeforeIns-1));
     }
 
+    @Ignore
     @Test
     @DisplayName("Mettre a jour un Cours")
     public void updateCoursTest() throws DaoException {
@@ -53,6 +64,8 @@ public class CoursTest {
         Cours  CoursAfterUpdate =  _cours.get(2);
         assertThat("Maven",equalTo(CoursAfterUpdate.getTheme()));
     }
+
+    @Ignore
     @Test
     @DisplayName("Trouver un Cours")
     public void getOneCoursTest() throws DaoException {
@@ -61,5 +74,5 @@ public class CoursTest {
         assertThat(Cours, instanceOf(Cours.class));
         assertEquals("info",Cours.getTheme());
     }
-*/
+
 }

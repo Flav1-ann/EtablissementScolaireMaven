@@ -1,6 +1,7 @@
 package eu.ensup.etablissementscolaire;
 
 import eu.ensup.etablissementscolaire.exceptions.DaoException;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
@@ -12,13 +13,15 @@ public class EtudiantsTests {
 
     static private  EtudiantDao et = new EtudiantDao();
 
-   /* @Test
+   @Test
+   @Ignore
     @DisplayName("Tout les etudiant")
     public void FindAllEtudiantTest() throws DaoException {
         int taille = et.getAll().size();
         assertEquals(6,taille);
     }
     @Test
+    @Ignore
     @DisplayName("Ajouter un etudiant")
     public void addEtudiantTest() throws DaoException {
         int tailleBeforeIns = et.getAll().size();
@@ -29,6 +32,7 @@ public class EtudiantsTests {
         assertEquals(0,result);
     }
     @Test
+    @Ignore
     @DisplayName("Supprimer un etudiant")
     public void deleteEtudiantTest() throws DaoException {
         int tailleBeforeIns = et.getAll().size();
@@ -38,6 +42,7 @@ public class EtudiantsTests {
     }
 
     @Test
+    @Ignore
     @DisplayName("Mettre a jour un etudiant")
     public void updateEtudiantTest() throws DaoException {
         Etudiant  etudiantBeforeUpdtae =  et.get(15);
@@ -47,10 +52,11 @@ public class EtudiantsTests {
         assertEquals("test",etudiantAfterUpdate.getPrenom());
     }
     @Test
+    @Ignore
     @DisplayName("trouver un etudiant")
     public void getOneEtudiantTest() throws DaoException {
         Etudiant  etudiant=  et.get(15);
         assertEquals("24 b",etudiant.getAdresse());
-    }*/
+    }
 
 }

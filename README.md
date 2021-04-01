@@ -5,7 +5,7 @@ Voici le projet avec les tests unitaire avec Mockito et Spy
 
 Pour lancer les tests et le projet il faut avoir JDK15
 
-Avoir Maven d'installer sur le poste
+Avoir Maven d'installer
 
 # Les tests
 

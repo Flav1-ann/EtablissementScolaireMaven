@@ -1,0 +1,25 @@
+version: '3.2'
+
+services:
+  mysql:
+    build: .
+    container_name: mysql-database
+    ports:
+      - 3306:3306
+    #volumes:
+      #- ./escolaire.sql:/docker-entrypoint-initdb.d/
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      #MYSQL_DATABASE: name_db
+      #MYSQL_USER: user
+      #MYSQL_PASSWORD: password
+  app:
+    depends_on:
+      - mysql
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    ports:
+      - '8081:80'
+    environment:
+      PMA_HOST: mysql

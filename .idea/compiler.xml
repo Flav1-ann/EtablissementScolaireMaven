@@ -13,8 +13,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="EtablissementScolaire" target="1.7" />
-      <module name="EtablissementScolaire-dao" target="1.7" />
+      <module name="EtablissementScolaire" target="15" />
+      <module name="EtablissementScolaire-dao" target="8" />
       <module name="EtablissementScolaire-domaine" target="1.7" />
       <module name="EtablissementScolaire-presentation" target="8" />
       <module name="EtablissementScolaire-service" target="8" />

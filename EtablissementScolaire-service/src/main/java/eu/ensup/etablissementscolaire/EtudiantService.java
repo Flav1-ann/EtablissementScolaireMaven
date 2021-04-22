@@ -17,8 +17,16 @@ import eu.ensup.etablissementscolaire.exceptions.DaoException;
  */
 public class EtudiantService implements IEtudiantService{
 
-    private final IEtudiantDao etudiantDao = new EtudiantDao();
+    private IEtudiantDao etudiantDao;
     private final PersonnePhysiqueService personnePhysiqueService = new PersonnePhysiqueService();
+
+    public EtudiantService(IEtudiantDao etudiantDao) {
+        this.etudiantDao = etudiantDao;
+    }
+
+    public EtudiantService() {
+        this.etudiantDao = new EtudiantDao();
+    }
 
     @Override
     public int create(Etudiant etudiant) throws AddEtudiantServiceException, CredentialException {

@@ -95,7 +95,7 @@ public class ResponsableDao extends BaseDao implements IResponsableDao {
 		String sql;
 		Responsable res = null;
 		try {
-			sql = "select * from res_etude WHERE id_res= ?";
+			sql = "select id_res, nom, prenom, email, adresse, telephone, mdp, salt, id_role from personne a join personne_phys b on a.id_personne = b.id_phys join res_etude r on b.id_phys = r.id_res WHERE id_res = ?";
 			setPs(getCn().prepareStatement(sql));
 			getPs().setInt(1, id);
 			setRs(getPs().executeQuery());
@@ -104,6 +104,7 @@ public class ResponsableDao extends BaseDao implements IResponsableDao {
 						getRs().getString("telephone"), getRs().getString("prenom"), getRs().getString("mdp"), getRs().getString("salt"));
 			}
 		} catch (SQLException e) {
+			System.out.println(e.getErrorCode() + e.getMessage());
 			throw new CRUDException(e, Responsable.class.getName(), "Get");
 		}
 		disconnect();

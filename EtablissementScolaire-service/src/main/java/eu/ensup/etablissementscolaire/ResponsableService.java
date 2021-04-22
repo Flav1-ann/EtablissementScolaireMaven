@@ -1,7 +1,7 @@
 package eu.ensup.etablissementscolaire;
 
 
-import eu.ensup.etablissementscolaire.exception.CredentialException;
+import eu.ensup.etablissementscolaire.exception.CredentialException1;
 import eu.ensup.etablissementscolaire.exception.responsableExceptions.*;
 import eu.ensup.etablissementscolaire.exceptions.DaoException;
 
@@ -10,10 +10,6 @@ import eu.ensup.etablissementscolaire.exceptions.DaoException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-
 
 
 /**
@@ -25,13 +21,13 @@ public class ResponsableService implements IResponsableService {
     private final PersonnePhysiqueService personnePhysiqueService = new PersonnePhysiqueService();
 
     @Override
-    public int create(Responsable r) throws CredentialException, AddResponsableServiceException {
+    public int create(Responsable r) throws CredentialException1, AddResponsableServiceException {
         byte[] salt = personnePhysiqueService.createSalt();
         String hash = null;
         try {
             hash = personnePhysiqueService.generateHashPassword(r.getMotDePasse(), salt);
         }catch (NoSuchAlgorithmException e){
-            throw new CredentialException();
+            throw new CredentialException1();
         }
 
         r.setSalt(Base64.getEncoder().encodeToString(salt));
@@ -85,24 +81,24 @@ public class ResponsableService implements IResponsableService {
     }
 
     @Override
-    public Responsable getCredentialByEmail(String email) throws CredentialException {
+    public Responsable getCredentialByEmail(String email) throws CredentialException1 {
         try {
             return responsableDao.getCredentialByEmail(email);
         } catch (DaoException se) {
-            throw new CredentialException();
+            throw new CredentialException1();
         }
 
 
 
     }
     @Override
-    public int validAuthentification(Responsable r, String password) throws NoSuchAlgorithmException, CredentialException {
+    public int validAuthentification(Responsable r, String password) throws NoSuchAlgorithmException, CredentialException1 {
         int errorCode = 0;
         if(r != null) {
             errorCode = personnePhysiqueService.validPersonnePhysique(r,password);
         }
         if(r == null || errorCode == 0){
-            throw new CredentialException();
+            throw new CredentialException1();
         }
         else {
             return errorCode;

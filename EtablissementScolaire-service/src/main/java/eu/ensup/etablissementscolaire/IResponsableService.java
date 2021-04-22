@@ -1,6 +1,6 @@
 package eu.ensup.etablissementscolaire;
 
-import eu.ensup.etablissementscolaire.exception.CredentialException;
+import eu.ensup.etablissementscolaire.exception.CredentialException1;
 import eu.ensup.etablissementscolaire.exception.EmailFormatException;
 import eu.ensup.etablissementscolaire.exception.ServiceException;
 
@@ -42,6 +42,6 @@ public interface IResponsableService extends IService<Responsable>
      * @return the int
      * @throws NoSuchAlgorithmException the no such algorithm exception
      */
-    int validAuthentification(Responsable r, String password) throws NoSuchAlgorithmException, CredentialException, EmailFormatException;
+    int validAuthentification(Responsable r, String password) throws NoSuchAlgorithmException, CredentialException1, EmailFormatException;
 
 }

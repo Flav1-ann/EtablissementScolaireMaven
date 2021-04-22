@@ -2,7 +2,7 @@ package eu.ensup.etablissementscolaire;
 
 import java.util.Set;
 
-import eu.ensup.etablissementscolaire.exception.CredentialException;
+import eu.ensup.etablissementscolaire.exception.CredentialException1;
 import eu.ensup.etablissementscolaire.exception.ServiceException;
 import eu.ensup.etablissementscolaire.exception.coursExceptions.*;
 import eu.ensup.etablissementscolaire.exception.directeurExceptions.*;
@@ -23,7 +23,7 @@ public interface IService<T>
 	 * @return the int
 	 * @throws ServiceException the service exception
 	 */
-	int create(T entity) throws ServiceException, CredentialException, AddCoursServiceException, CredentialException, AddDirecteurServiceException, AddEnseignantServiceException, AddEtudiantServiceException;
+	int create(T entity) throws ServiceException, CredentialException1, AddCoursServiceException, CredentialException1, AddDirecteurServiceException, AddEnseignantServiceException, AddEtudiantServiceException;
 
 	/**
 	 * Update int.

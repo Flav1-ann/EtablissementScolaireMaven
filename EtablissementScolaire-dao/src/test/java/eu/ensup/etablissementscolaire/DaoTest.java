@@ -1,7 +1,6 @@
 package eu.ensup.etablissementscolaire;
-
+/*
 import eu.ensup.etablissementscolaire.exceptions.DaoException;
-import org.hamcrest.MatcherAssert;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -20,13 +19,14 @@ import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.HashSet;
-
+/*
 /**
  * Unit test for simple App.
  */
+/*
 public class DaoTest
 {
-    /*
+
     @Test
     @DisplayName("Test for database connexion")
     public void testConnection() {
@@ -37,9 +37,9 @@ public class DaoTest
     @Test
     @DisplayName("Test get Etudiant")
     public void testgetEtudiant() throws ParseException {
-        /* try {
+        try {
 
-           /* EtudiantDao etudiantDao = new EtudiantDao();
+           EtudiantDao etudiantDao = new EtudiantDao();
             Etudiant thomas = etudiantDao.get(14);
 
             Etudiant thomasMock = when(etudiantDao.get(14)).thenReturn();
@@ -51,7 +51,7 @@ public class DaoTest
             fail("Une erreur est survenue lors de la récupération de l'étudiant");
         }
     }
-
+/*
     @Test
     @DisplayName("Test get all etudiant")
     public void testgetAllEtudiant() {
@@ -168,5 +168,6 @@ public class DaoTest
         } catch (DaoException de) {
             //fail("Une erreur est survenue lors de la récupération de l'étudiant");
         }
-    }*/
+    }*//*
 }
+*/

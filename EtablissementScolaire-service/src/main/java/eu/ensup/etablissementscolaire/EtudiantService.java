@@ -7,7 +7,7 @@ import java.util.OptionalDouble;
 import java.util.Set;
 
 
-import eu.ensup.etablissementscolaire.exception.CredentialException;
+import eu.ensup.etablissementscolaire.exception.CredentialException1;
 import eu.ensup.etablissementscolaire.exception.etudiantExceptions.*;
 import eu.ensup.etablissementscolaire.exceptions.DaoException;
 
@@ -29,13 +29,13 @@ public class EtudiantService implements IEtudiantService{
     }
 
     @Override
-    public int create(Etudiant etudiant) throws AddEtudiantServiceException, CredentialException {
+    public int create(Etudiant etudiant) throws AddEtudiantServiceException, CredentialException1 {
         byte[] salt = personnePhysiqueService.createSalt();
         String hash = null;
         try {
             hash = personnePhysiqueService.generateHashPassword(etudiant.getMotDePasse(),salt);
         } catch (NoSuchAlgorithmException e) {
-            throw new CredentialException();
+            throw new CredentialException1();
         }
 
         etudiant.setSalt(Base64.getEncoder().encodeToString(salt));

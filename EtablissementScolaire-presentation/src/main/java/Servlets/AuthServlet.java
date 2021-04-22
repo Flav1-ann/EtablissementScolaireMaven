@@ -3,7 +3,7 @@ package Servlets;
 
 import eu.ensup.etablissementscolaire.Responsable;
 import eu.ensup.etablissementscolaire.ResponsableService;
-import eu.ensup.etablissementscolaire.exception.CredentialException;
+import eu.ensup.etablissementscolaire.exception.CredentialException1;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,19 +24,21 @@ public class AuthServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         try {
             operations(request,response);
-        } catch (CredentialException | NoSuchAlgorithmException e) {
+        } catch (CredentialException1 | NoSuchAlgorithmException e) {
+            request.getRequestDispatcher("erreur.jsp").forward(request,response);
             e.printStackTrace();
         }
     }
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         try {
             operations(request,response);
-        } catch (CredentialException | NoSuchAlgorithmException e) {
+        } catch (CredentialException1 | NoSuchAlgorithmException e) {
+            request.getRequestDispatcher("erreur.jsp").forward(request,response);
             e.printStackTrace();
         }
     }
 
-    protected void operations(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, CredentialException, NoSuchAlgorithmException {
+    protected void operations(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, CredentialException1, NoSuchAlgorithmException {
 
         HttpSession userSession = request.getSession();
         String email = request.getParameter("login");
@@ -52,8 +54,8 @@ public class AuthServlet extends HttpServlet {
 
         if (resp == 1 )
         {
-         userSession.setAttribute("user",user);
-         request.getRequestDispatcher("home.jsp").forward(request,response);
+             userSession.setAttribute("user",user);
+             request.getRequestDispatcher("home.jsp").forward(request,response);
         }else
         {
             request.getRequestDispatcher("erreur.jsp").forward(request,response);

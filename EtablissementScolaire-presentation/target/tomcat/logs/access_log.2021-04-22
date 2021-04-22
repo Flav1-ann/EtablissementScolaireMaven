@@ -1,3 +1,6 @@
-127.0.0.1 - - [22/Apr/2021:14:15:20 +0200] "GET /etablissement/ HTTP/1.1" 200 1565 http-bio-8080-exec-2 380
-127.0.0.1 - - [22/Apr/2021:14:15:21 +0200] "GET /etablissement/assets/css/style.css HTTP/1.1" 200 1945 http-bio-8080-exec-3 3
-127.0.0.1 - - [22/Apr/2021:14:15:37 +0200] "POST /etablissement/form HTTP/1.1" 200 781 http-bio-8080-exec-5 2482
+127.0.0.1 - - [22/Apr/2021:15:39:55 +0200] "GET /etablissement/ HTTP/1.1" 200 2034 http-bio-8080-exec-2 330
+127.0.0.1 - - [22/Apr/2021:15:39:55 +0200] "GET /etablissement/css/style.css HTTP/1.1" 200 1319 http-bio-8080-exec-3 3
+127.0.0.1 - - [22/Apr/2021:15:39:55 +0200] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-4 0
+127.0.0.1 - - [22/Apr/2021:15:40:13 +0200] "POST /etablissement/aut HTTP/1.1" 200 3726 http-bio-8080-exec-5 186
+127.0.0.1 - - [22/Apr/2021:15:40:13 +0200] "GET /etablissement/assets/css/styles.css HTTP/1.1" 404 1021 http-bio-8080-exec-6 1
+127.0.0.1 - - [22/Apr/2021:15:40:13 +0200] "GET /etablissement/assets/js/app.js HTTP/1.1" 404 1011 http-bio-8080-exec-7 1

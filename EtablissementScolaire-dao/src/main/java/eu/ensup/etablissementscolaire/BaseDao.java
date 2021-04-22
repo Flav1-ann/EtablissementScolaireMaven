@@ -8,11 +8,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
+import java.util.logging.Logger;
 
 import eu.ensup.etablissementscolaire.exceptions.CRUDException;
 import eu.ensup.etablissementscolaire.exceptions.DaoException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
+
 
 
 
@@ -37,7 +37,7 @@ public class BaseDao {
     /**
      * The constant logger.
      */
-    final static Logger logger = Logger.getLogger(BaseDao.class);
+    final static Logger logger = Logger.getLogger(String.valueOf(BaseDao.class));
 
 
     /**
@@ -49,7 +49,7 @@ public class BaseDao {
         //PropertyConfigurator.configureAndWatch("" + bundle.getString("log.pathconfig"));
         this.url ="jdbc:mysql://localhost:3306/etablissement_scolaire?serverTimezone=Europe/Berlin" ; //bundle.getString("jdbc:mysql://vps-0c0ccce5.vps.ovh.net:3306/etablissement_scolaire?serverTimezone=Europe/Berlin");
         this.login = "root";//bundle.getString("web");
-        this.password = "secret";//bundle.getString("Ensup2020*");
+        this.password = "";//bundle.getString("Ensup2020*");
     }
 
     /**

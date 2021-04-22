@@ -50,7 +50,7 @@
                       <h2>Accueil</h2>
                       <form class="row">
                           <div class="form-group btn-center">
-                              <a href="createUser.jsp" class="col-12"> <button type="button" class="btn btn-primary btn-form col-12">Ajouter un étudiant</button></a>
+                              <a href="frmEtudiant.html" class="col-12"> <button type="button" class="btn btn-primary btn-form col-12">Ajouter un étudiant</button></a>
                           </div>
                           <div class="form-group btn-center ">
                               <a href="#" class="col-12"> <button type="button" class="btn btn-primary btn-form col-12">Editer un étudiant</button></a>

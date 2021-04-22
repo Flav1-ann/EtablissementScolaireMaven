@@ -15,69 +15,57 @@
 </head>
 
 <body>
-  <%
-      if (session.getAttribute("user") != null) {
-          %>
- <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-           <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse" id="navbarNav">
-           <ul class="navbar-nav">
-             <li class="nav-item">
-               <a class="nav-link" href="#">CRÉER ÉTUDIANT</a>
-             </li>
-             <li class="nav-item">
-               <a class="nav-link" href="#">ATTRIBUER COURS</a>
-             </li>
-             <li class="nav-item">
-                 <a class="nav-link" href="#">LISTE DES ÉTUDIANTS</a>
-               </li>
-             <li class="nav-item">
-                 <a class="nav-link" href="#">DÉCONNEXION</a>
-               </li>
-           </ul>
-         </div>
-       </nav>
-             <%
-          }
-       %>
-  <main>
-      <div class="container-fluid d-flex justify-content-center" >
-          <div class="card shadow-lg">
-              <form class="form">
-                  <fieldset class="form-row">
-                      <h2>Accueil</h2>
-                      <form class="row">
-                          <div class="form-group btn-center">
-                              <a href="frmEtudiant.html" class="col-12"> <button type="button" class="btn btn-primary btn-form col-12">Ajouter un étudiant</button></a>
-                          </div>
-                          <div class="form-group btn-center ">
-                              <a href="#" class="col-12"> <button type="button" class="btn btn-primary btn-form col-12">Editer un étudiant</button></a>
-                          </div>
-                          <div class="form-group btn-center">
-                              <a href="#" class="col-12"> <button type="button" class="btn btn-primary btn-form col-12">Associer un cours à un étudiant</button></a>
-                          </div>
-                          <div class="form-group btn-center">
-                              <a href="listEtudiant.html" class="col-12"> <button type="button" class="btn btn-primary btn-form col-12">Lister les étudiants</button></a>
-                          </div>
-                          <div class="form-group btn-center">
-                              <a href="#" class="col-12"> <button type="button" class="btn btn-primary btn-form col-12">Ajouter une note</button></a>
-                          </div>
-                          <div class="form-group btn-center">
-                              <a href="#" class="col-12"> <button type="button" class="btn btn-primary btn-form col-12">Statistiques</button></a>
-                          </div>
+    <main class="container-fluid">
+        <div class="row h-100">
+
+            <div class="col-4 d-none d-lg-block"></div>
+
+            <div class="col-lg-4 col-12 my-auto">
+                <div class="row form_div">
+                    <form class="student_form col-12">
+                        <div class="row">
+                            <div class="menu-button col-12">
+                                <a href="frmEtudiant.html"> <button type="button" class="btn btn-primary col-12">Ajouter un étudiant</button></a>
+                            </div>
+
+                            <div class="menu-button col-12">
+                                <a href="frmEtudiant.html"> <button type="button" class="btn btn-primary btn-form col-12">Modifier un étudiant</button></a>
+                            </div>
+
+                            <div class="menu-button col-12">
+                                <a href="frmEtudiant.html"> <button type="button" class="btn btn-primary btn-form col-12">Associer un cours à un étudiant</button></a>
+                            </div>
+
+                            <div class="menu-button col-12">
+                                <a href="frmEtudiant.html"> <button type="button" class="btn btn-primary btn-form col-12">Lister les étudiants</button></a>
+                            </div>
+
+                            <div class="menu-button col-12">
+                                <a href="frmEtudiant.html"> <button type="button" class="btn btn-primary btn-form col-12">Ajouter une note</button></a>
+                            </div>
+
+                            <div class="menu-button col-12">
+                                <a href="frmEtudiant.html"> <button type="button" class="btn btn-primary btn-form col-12">Statistiques</button></a>
+                            </div>
 
 
-                          <div class="form-group">
-                              <p id="alert"></p>
-                          </div>
+                        </div>
 
-                      </form>
-                  </fieldset>
-              </form>
-          </div>
-      </div>
-  </main>
+
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="col-4 d-none d-lg-block"></div>
+
+        </div>
+
+
+
+
+        </div>
+    </main>
 </body>
+
 </html>

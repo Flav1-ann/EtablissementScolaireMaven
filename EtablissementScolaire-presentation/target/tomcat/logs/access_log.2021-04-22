@@ -1,6 +1,10 @@
-127.0.0.1 - - [22/Apr/2021:15:39:55 +0200] "GET /etablissement/ HTTP/1.1" 200 2034 http-bio-8080-exec-2 330
-127.0.0.1 - - [22/Apr/2021:15:39:55 +0200] "GET /etablissement/css/style.css HTTP/1.1" 200 1319 http-bio-8080-exec-3 3
-127.0.0.1 - - [22/Apr/2021:15:39:55 +0200] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-4 0
-127.0.0.1 - - [22/Apr/2021:15:40:13 +0200] "POST /etablissement/aut HTTP/1.1" 200 3726 http-bio-8080-exec-5 186
-127.0.0.1 - - [22/Apr/2021:15:40:13 +0200] "GET /etablissement/assets/css/styles.css HTTP/1.1" 404 1021 http-bio-8080-exec-6 1
-127.0.0.1 - - [22/Apr/2021:15:40:13 +0200] "GET /etablissement/assets/js/app.js HTTP/1.1" 404 1011 http-bio-8080-exec-7 1
+127.0.0.1 - - [22/Apr/2021:16:22:51 +0200] "GET /etablissement/ HTTP/1.1" 200 2034 http-bio-8080-exec-1 321
+127.0.0.1 - - [22/Apr/2021:16:22:51 +0200] "GET /etablissement/css/style.css HTTP/1.1" 200 1319 http-bio-8080-exec-2 3
+127.0.0.1 - - [22/Apr/2021:16:22:51 +0200] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-3 0
+127.0.0.1 - - [22/Apr/2021:16:23:06 +0200] "POST /etablissement/aut HTTP/1.1" 200 3724 http-bio-8080-exec-5 189
+127.0.0.1 - - [22/Apr/2021:16:23:06 +0200] "GET /etablissement/assets/css/styles.css HTTP/1.1" 404 1021 http-bio-8080-exec-6 2
+127.0.0.1 - - [22/Apr/2021:16:23:06 +0200] "GET /etablissement/assets/js/app.js HTTP/1.1" 404 1011 http-bio-8080-exec-7 1
+127.0.0.1 - - [22/Apr/2021:16:23:08 +0200] "GET /etablissement/createUser.jsp HTTP/1.1" 200 4459 http-bio-8080-exec-8 41
+127.0.0.1 - - [22/Apr/2021:16:23:09 +0200] "GET /etablissement/assets/css/styles.css HTTP/1.1" 404 1021 http-bio-8080-exec-9 0
+127.0.0.1 - - [22/Apr/2021:16:23:09 +0200] "GET /etablissement/assets/js/app.js HTTP/1.1" 404 1011 http-bio-8080-exec-10 0
+127.0.0.1 - - [22/Apr/2021:16:23:19 +0200] "POST /etablissement/etudiantAdd HTTP/1.1" 200 - http-bio-8080-exec-9 30

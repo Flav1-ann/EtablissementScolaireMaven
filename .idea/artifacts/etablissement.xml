@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="etablissement">
+    <output-path>$PROJECT_DIR$/out/artifacts/etablissement</output-path>
+    <root id="root">
+      <element id="module-output" name="EtablissementScolaire-presentation" />
+      <element id="library" level="project" name="Java EE 6-Java EE 6" />
+      <element id="module-output" name="EtablissementScolaire-service" />
+      <element id="module-output" name="EtablissementScolaire-dao" />
+      <element id="module-output" name="EtablissementScolaire-domaine" />
+    </root>
+  </artifact>
+</component>

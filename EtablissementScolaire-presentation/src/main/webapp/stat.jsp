@@ -1,3 +1,8 @@
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Map" %>
+<%@ page import="eu.ensup.etablissementscolaire.exceptions.DaoException" %>
+<%@ page import="eu.ensup.etablissementscolaire.EtudiantService" %>
+<%@ page import="eu.ensup.etablissementscolaire.NoteEleveService" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <!DOCTYPE html>
     <html lang="fr">
@@ -55,6 +60,23 @@
                 <div class="col-5 chart-container">
                     <canvas id="myChart" width="800" height="450"></canvas>
                 </div>
+                <%
+                    EtudiantService etudiantService = new EtudiantService();
+                    NoteEleveService eleveService = new NoteEleveService();
+                    int[] repartition = {0, 0, 0, 0};
+
+                    try {
+                        Map<Integer, List<Float>> etudiantsNotes  = eleveService.FindNoteEtudiant();
+
+                        for (Map.Entry<Integer, List<Float>> entry : etudiantsNotes.entrySet()) {
+                            repartition = etudiantService.niveauEleve(repartition, entry.getValue());
+                        }
+
+                    } catch (DaoException e) {
+                        e.printStackTrace();
+                    }
+
+                %>
                 <script>
                     var ctx = document.getElementById('myChart').getContext('2d');
                     var myChart = new Chart(ctx, {
@@ -63,7 +85,7 @@
                             labels: ['Mauvais', 'Moyens', 'Bons', 'Excellents'],
                             datasets: [{
                                 label: 'Niveau des élèves',
-                                data: [12, 19, 3, 5],
+                                data: [<%= repartition[0]%>, <%= repartition[1]%>,  <%= repartition[2]%>,  <%= repartition[3]%>],
                                 backgroundColor: [
                                     'rgba(255, 99, 132, 1)',
                                     'rgba(54, 162, 235, 1)',
@@ -104,7 +126,7 @@
                         labels: ['Mauvais', 'Moyens', 'Bons', 'Excellents'],
                         datasets: [{
                             label: 'My First Dataset',
-                            data: [300, 50, 100, 20],
+                            data: [<%= repartition[0]%>, <%= repartition[1]%>,  <%= repartition[2]%>,  <%= repartition[3]%>],
                             backgroundColor: [
                                 'rgb(255, 99, 132)',
                                 'rgb(54, 162, 235)',

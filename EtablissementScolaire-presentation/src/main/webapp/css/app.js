@@ -41,7 +41,7 @@ function fildForm() {
                 break;
         }
     });
-
+    document.getElementById("id").value = etu.id;
     document.getElementById("name").value = etu.name;
     document.getElementById("lastName").value = etu.lastName;
     document.getElementById("address").value = etu.address;

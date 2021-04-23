@@ -69,6 +69,9 @@
 
                         </select>
                     </div>
+                    <form action="editEtudiant">
+                    <input type="hidden" class="form-control" id="id" placeholder="id" name="id">
+
                     <div class="form-group input">
                         <label for="name">Nom:</label>
                         <input  class="form-control" id="name" placeholder="Nom" name="name">
@@ -100,13 +103,14 @@
                     </div>
 
                     <div class="form-group btn-center" >
-                         <form action=""><button type="button" class="btn btn-primary btn-form-udpate" id="btnUpdate" >Modifier</button></form>
+                      <button type="submit" class="btn btn-primary btn-form-udpate" formmethod="POST" id="btnUpdate" >Modifier</button>
                         <button type="button" class="btn btn-danger btn-form-udpate" id="">Annuler</button>
                     </div>
 
                     <div class="form-group">
                         <p id="alert"></p>
                     </div>
+                </form>
                 </fieldset>
         </div>
     </div>

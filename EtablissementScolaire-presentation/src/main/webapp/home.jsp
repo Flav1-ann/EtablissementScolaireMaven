@@ -47,6 +47,9 @@
                             <div class="menu-button col-12">
                                 <a href="stat.jsp" class="col-12"> <button type="button" class="btn btn-primary btn-form col-12">Statistiques</button></a>
                             </div>
+                            <div class="menu-button col-12">
+                                <a href="disconnect" class="col-12"> <button type="button" class="btn btn-primary btn-form col-12">Déconnexion</button></a>
+                            </div>
                         </div>
                 </div>
 

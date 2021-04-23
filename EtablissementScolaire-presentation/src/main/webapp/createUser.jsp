@@ -40,7 +40,7 @@
                         <a class="nav-link" href="stat.jsp">STATISTIQUES</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">DÉCONNEXION</a>
+                        <a class="nav-link" href="disconnect">DÉCONNEXION</a>
                     </li>
                 </ul>
             </div>

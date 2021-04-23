@@ -12,7 +12,8 @@
             <meta charset="UTF-8">
             <title>Appli étudiant</title>
             <link href="css/style.css" rel="stylesheet">
-            <script type="text/javascript" src="css/app.js" defer></script>
+            <script type="text/javascript" src="css/notes.js" defer></script>
+
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
               crossorigin="anonymous">
@@ -40,7 +41,7 @@
                     <a class="nav-link" href="etudiantList">LISTER LES ÉTUDIANTS</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="addNoteEtudiant.jsp">AJOUTER UNE NOTE</a>
+                    <a class="nav-link" href="addNote">AJOUTER UNE NOTE</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="stat.jsp">STATISTIQUES</a>
@@ -95,7 +96,7 @@
                           <select name="noteselect" id="noteselect">
                             <option value="note" selected disabled> -- note --</option>
                             <% for(int i=0; i<=20; i++){ %>
-                              <option value="<%= i %>" selected>
+                              <option value="<%= i %>">
                                 <%= i %>
                               </option>
                               <% } %>

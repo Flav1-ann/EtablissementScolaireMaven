@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
 import java.util.Set;
 
 @WebServlet(name = "addNote", value = "/addNote")
@@ -45,6 +46,7 @@ public class AddNoteController extends HttpServlet {
     }
 
     protected void operations(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, ServiceException, NoSuchAlgorithmException, DaoException {
+
         EtudiantService etudiantService = new EtudiantService();
         MatiereService matiereService = new MatiereService();
         NoteEleveService noteEleveService = new NoteEleveService();
@@ -62,7 +64,7 @@ public class AddNoteController extends HttpServlet {
             noteEleveService.addNoteEleve(noteEleve,etudiantService.get(Integer.parseInt(request.getParameter("button").split(" ")[1])),matiereService.get(Integer.parseInt(request.getParameter("button").split(" ")[0])));
         }
 
-        request.getRequestDispatcher("setCourse.jsp").forward(request,response);
+        request.getRequestDispatcher("addNoteEtudiant.jsp").forward(request,response);
 
     }
 

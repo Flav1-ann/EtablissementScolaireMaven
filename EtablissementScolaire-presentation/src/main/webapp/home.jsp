@@ -38,7 +38,7 @@
                             </div>
 
                             <div class="menu-button col-12">
-                                <a href="addNoteEtudiant.jsp" class="col-12"> <button type="button" class="btn btn-primary btn-form col-12">Ajouter une note</button></a>
+                                <a href="addNote" class="col-12"> <button type="button" class="btn btn-primary btn-form col-12">Ajouter une note</button></a>
                             </div>
 
                             <div class="menu-button col-12">

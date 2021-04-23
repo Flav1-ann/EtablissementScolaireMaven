@@ -25,7 +25,7 @@ if (document.getElementById("studentselect") != null && document.getElementById(
     });
 
     document.getElementById("noteselect").addEventListener("change",() =>{
-        etudiant = document.getElementById("noteselect").selectedOptions[0].value
+        note = document.getElementById("noteselect").selectedOptions[0].value
         noteCoursEtudiant(course ,etudiant,note)
     });
 

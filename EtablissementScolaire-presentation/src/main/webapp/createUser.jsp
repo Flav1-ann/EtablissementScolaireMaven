@@ -34,7 +34,7 @@
                         <a class="nav-link" href="etudiantList">LISTER LES ÉTUDIANTS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="addNoteEtudiant.jsp">AJOUTER UNE NOTE</a>
+                        <a class="nav-link" href="addNote">AJOUTER UNE NOTE</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="stat.jsp">STATISTIQUES</a>

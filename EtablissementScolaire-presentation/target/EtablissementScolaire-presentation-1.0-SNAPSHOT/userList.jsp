@@ -1,3 +1,5 @@
+<%@ page import="eu.ensup.etablissementscolaire.Etudiant" %>
+<%@ page import="java.util.Set" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="fr">
@@ -8,10 +10,9 @@
     <meta charset="UTF-8">
     <title>Appli étudiant</title>
     <link href="css/style.css" rel="stylesheet">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <script type="text/javascript" src="assets/js/app.js" defer></script>
+    <script type="text/javascript" src="assets/js/app.js" defer> </script>
 </head>
 
 <body>
@@ -58,55 +59,22 @@
                           <tr>
                             <th scope="col">Prénom</th>
                             <th scope="col">Nom</th>
-                            <th scope="col">Date de naissance</th>
+                            <th scope="col">E-mail</th>
                           </tr>
                         </thead>
                         <tbody>
+                        <%
+                            for(Etudiant e : (Set<Etudiant>) session.getAttribute("listEtudiant")){
+
+                        %>
                           <tr>
-                            <td>Maxime</td>
-                            <td>Dazin</td>
-                            <td>02/08/1999</td>
+                            <td><%= e.getNom()%></td>
+                            <td><%= e.getPrenom()%></td>
+                            <td><%= e.getEmail()%></td>
                           </tr>
-                          <tr>
-                            <td>Brice</td>
-                            <td>Martinez</td>
-                            <td>11/04/1930</td>
-                          </tr>
-                          <tr>
-                            <td>Flavien</td>
-                            <td>Annexe</td>
-                            <td>27/03/1998</td>
-                          </tr>
-                          <tr>
-                            <td>Maxime</td>
-                            <td>Dazin</td>
-                            <td>02/08/1999</td>
-                          </tr>
-                          <tr>
-                            <td>Brice</td>
-                            <td>Martinez</td>
-                            <td>11/04/1930</td>
-                          </tr>
-                          <tr>
-                            <td>Flavien</td>
-                            <td>Annexe</td>
-                            <td>27/03/1998</td>
-                          </tr>
-                          <tr>
-                            <td>Maxime</td>
-                            <td>Dazin</td>
-                            <td>02/08/1999</td>
-                          </tr>
-                          <tr>
-                            <td>Brice</td>
-                            <td>Martinez</td>
-                            <td>11/04/1930</td>
-                          </tr>
-                          <tr>
-                            <td>Flavien</td>
-                            <td>Annexe</td>
-                            <td>27/03/1998</td>
-                          </tr>
+                        <%
+                            }
+                        %>
                         </tbody>
                       </table>
                 </div>

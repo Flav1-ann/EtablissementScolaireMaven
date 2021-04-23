@@ -81,15 +81,14 @@ public class ResponsableService implements IResponsableService {
     }
 
     @Override
-    public Responsable getCredentialByEmail(String email) throws CredentialException1 {
+    public Responsable getCredentialByEmail(String email)  {
         try {
             return responsableDao.getCredentialByEmail(email);
-        } catch (DaoException se) {
-            throw new CredentialException1();
+        }  catch (DaoException e) {
+            e.printStackTrace();
         }
 
-
-
+        return null;
     }
     @Override
     public int validAuthentification(Responsable r, String password) throws NoSuchAlgorithmException, CredentialException1 {

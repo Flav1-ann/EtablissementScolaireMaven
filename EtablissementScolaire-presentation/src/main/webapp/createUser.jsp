@@ -85,7 +85,12 @@
                             </div>
 
                             <div class="form_error col-12">
-                                <p id="form_info_text"></p>
+                                <% if (session.getAttribute("info") != null) {%>
+                                    <p id="form_info_text">${info}</p>
+                                <%
+                                        session.removeAttribute("info");
+                                    }
+                                %>
                             </div>
 
                             <div class="form_input col-12 ">
@@ -100,13 +105,9 @@
 
             </div>
 
-            <div class="col-4 d-none d-lg-block"></div>
+            <div class="col-4 d-none d-lg-block"/>
 
         </div>
-
-
-
-
         </div>
     </main>
 </body>

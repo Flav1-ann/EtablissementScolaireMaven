@@ -45,7 +45,11 @@
       <version>4.0.1</version>
       <scope>provided</scope>
     </dependency>
-
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -135,7 +139,7 @@
         <version>2.2</version>
         <configuration>
           <uriEncoding>UTF-8</uriEncoding>
-          <path>/etablissement</path>
+          <path>/etablissementScolaire</path>
           <update>true</update>
         </configuration>
       </plugin>

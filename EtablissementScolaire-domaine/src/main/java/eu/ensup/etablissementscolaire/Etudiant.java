@@ -92,17 +92,4 @@ public class Etudiant extends PersonnePhysique{
         this.cours = cours;
     }
 
-
-    @Override
-    public String toString() {
-        String res = super.toString() + "Etudiant{" +
-                "dateNaissance=" + dateNaissance +
-                ", cours=" + cours +
-                '}';
-
-        return this.getNom()+" "+this.getPrenom() ;
-
-
-    }
-
 }

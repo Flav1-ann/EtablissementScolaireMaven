@@ -1,2 +1,5 @@
+Servlets\ListEtudiantController.class
+Servlets\EditEtudiant.class
+Servlets\SetCourse.class
 Servlets\AuthServlet.class
 Servlets\AddEtudiantController.class

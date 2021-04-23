@@ -39,10 +39,12 @@ public class AuthServlet extends HttpServlet {
     }
 
     protected void operations(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, CredentialException1, NoSuchAlgorithmException {
-
         HttpSession userSession = request.getSession();
+
         String email = request.getParameter("login");
         String pwd = request.getParameter("password");
+
+        userSession.removeAttribute("user");
 
         ResponsableService responsableService = new ResponsableService();
 

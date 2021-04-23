@@ -1,4 +1,8 @@
+<%@ page import="eu.ensup.etablissementscolaire.Etudiant" %>
+<%@ page import="java.util.Set" %>
+<%@ page import="eu.ensup.etablissementscolaire.Cours" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -57,12 +61,9 @@
 
                                 <select name="student-select" id="student-select">
                                     <option value="" selected disabled>--Choisissez un étudiant--</option>
-                                    <option value="dog">Dog</option>
-                                    <option value="cat">Cat</option>
-                                    <option value="hamster">Hamster</option>
-                                    <option value="parrot">Parrot</option>
-                                    <option value="spider">Spider</option>
-                                    <option value="goldfish">Goldfish</option>
+                                    <% for(Etudiant e : (Set<Etudiant>) session.getAttribute("listEtudiant")){ %>
+                                        <option value="<%= e %>"><%= e.getNom() + " " +e.getPrenom() %></option>
+                                    <% } %>
                                 </select>
                             </div>
 
@@ -71,12 +72,12 @@
 
                                 <select name="courses" id="course-select">
                                     <option value="" selected disabled>--Choisissez un cours--</option>
-                                    <option value="dog">Dog</option>
-                                    <option value="cat">Cat</option>
-                                    <option value="hamster">Hamster</option>
-                                    <option value="parrot">Parrot</option>
-                                    <option value="spider">Spider</option>
-                                    <option value="goldfish">Goldfish</option>
+                                    <% for(Cours c : (Set<Cours>) session.getAttribute("listCourse")){ %>
+
+                                     <option value="<%= c %>"><%= c.getTheme() %></option>
+
+                                    <% } %>
+
                                 </select>
                             </div>
 
@@ -89,7 +90,7 @@
                             <div class="form_input col-12 ">
                                 <input class="btn btn-primary submit-btn" type="button" value="Envoyer">
                             </div>
-
+                            <a href="<c:out value="${pageContext.request.requestURI}"/> "><c:out value="${(User)(pageContext.request.getAttribute('user')).name}"/></a>
                         </div>
 
 

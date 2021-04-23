@@ -28,7 +28,7 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                  <li class="nav-item">Cours
+                  <li class="nav-item">
                     <a class="nav-link" href="createUser.jsp">AJOUTER UN ÉTUDIANT</a>
                   </li>
                   <li class="nav-item">

@@ -72,7 +72,7 @@
                                 </select>
                             </div>
 
-                            <div class="form-group col-7">
+                            <div class="form-group col-6">
                                 <label for="courseselect">Choisir un cours:</label>
 
                                 <select name="courses" id="courseselect">
@@ -85,10 +85,11 @@
                             </div>
 
 
-                            <div class="form-group col-5">
+                            <div class="form-group col-6">
                               <label for="studentselect">Choisir une note:</label>
 
                               <select name="student-select" id="studentselect">
+                                <option value="note" selected disabled> -- note --</option>
                                 <% for(int i = 0; i<= 20; i++){ %>
                                   <option value="<%= i %>" selected><%= i %></option>
                                   <% } %>

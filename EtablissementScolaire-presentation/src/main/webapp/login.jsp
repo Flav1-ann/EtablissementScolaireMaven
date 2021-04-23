@@ -37,6 +37,12 @@
                                 <input class="btn btn-primary submit-btn-co" formmethod="post"  type="submit" value="Connexion">
                             </div>
 
+                             <div class="form_error col-12">
+                                                                <% if (request.getAttribute("error") !=null) {%>
+                                                                    <p id="form_info_text">${error}</p>
+                                                                    <% } %>
+                                                            </div>
+
                         </div>
 
 

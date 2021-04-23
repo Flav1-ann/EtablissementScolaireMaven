@@ -51,17 +51,15 @@ public class AuthServlet extends HttpServlet {
         Responsable user;
 
         user = responsableService.getCredentialByEmail(email);
-
-        int resp = responsableService.validAuthentification(user, pwd);
-
-        if (resp == 1 )
-        {
-             userSession.setAttribute("user",user);
-             request.getRequestDispatcher("home.jsp").forward(request,response);
-        }else
-        {
-            request.getRequestDispatcher("erreur.jsp").forward(request,response);
+        try {
+            responsableService.validAuthentification(user, pwd);
+            userSession.setAttribute("user",user);
+            request.getRequestDispatcher("home.jsp").forward(request,response);
+        } catch (CredentialException1 credentialException1){
+            request.setAttribute("error", credentialException1.getLocalizedMessage());
+            request.getRequestDispatcher("login.jsp").forward(request,response);
         }
+
 
     }
 

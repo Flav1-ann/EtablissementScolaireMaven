@@ -71,8 +71,8 @@
 
                         %>
                           <tr>
-                            <td><%= e.getNom()%></td>
                             <td><%= e.getPrenom()%></td>
+                            <td><%= e.getNom()%></td>
                             <td><%= e.getEmail()%></td>
                           </tr>
                         <%

@@ -50,77 +50,83 @@
         </nav>
 
         <main class="container-fluid">
-           <div class="row stat-row">
-            <div class="col-6">
-                <canvas id="myChart" width="800" height="450"></canvas>
-            </div>
-            <script>
-                var ctx = document.getElementById('myChart').getContext('2d');
-                var myChart = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: ['Mauvais', 'Moyens', 'Bons', 'Excellents'],
-                        datasets: [{
-                            label: 'Niveau des élèves',
-                            data: [12, 19, 3, 5],
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
 
-                            ],
-                            borderColor: [
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-
-                            ],
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        scales: {
-                            y: {
-                                beginAtZero: true
+            <div class="row">
+                <div class="col-5 chart-container">
+                    <canvas id="myChart" width="800" height="450"></canvas>
+                </div>
+                <script>
+                    var ctx = document.getElementById('myChart').getContext('2d');
+                    var myChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Mauvais', 'Moyens', 'Bons', 'Excellents'],
+                            datasets: [{
+                                label: 'Niveau des élèves',
+                                data: [12, 19, 3, 5],
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+    
+                                ],
+                                borderColor: [
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+    
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
                             }
                         }
-                    }
-                });
+                    });
+    
+    
+                </script>
+                <div class="col-2"></div>
 
+                <div class="col-5 chart-container">
+    
+                    <canvas id="myChart2" width="800" height="450"></canvas>
+                </div>
+                <script>
+                    var ctx = document.getElementById('myChart2').getContext('2d');
+                    const data = {
+                        labels: ['Mauvais', 'Moyens', 'Bons', 'Excellents'],
+                        datasets: [{
+                            label: 'My First Dataset',
+                            data: [300, 50, 100, 20],
+                            backgroundColor: [
+                                'rgb(255, 99, 132)',
+                                'rgb(54, 162, 235)',
+                                'rgb(255, 205, 86)',
+                                'rgb(255, 120, 86)'
+                            ],
+                            hoverOffset: 4
+                        }]
+                    };
+                    const config = {
+                        type: 'doughnut',
+                        data: data,
+                    };
+    
+                    var myChart = new Chart(ctx, config);
+    
+    
+                </script>
 
-            </script>
-            <div class="col-6">
-
-                <canvas id="myChart2" width="800" height="450"></canvas>
             </div>
-            <script>
-                var ctx = document.getElementById('myChart2').getContext('2d');
-                const data = {
-                    labels: ['Mauvais', 'Moyens', 'Bons', 'Excellents'],
-                    datasets: [{
-                        label: 'My First Dataset',
-                        data: [300, 50, 100, 20],
-                        backgroundColor: [
-                            'rgb(255, 99, 132)',
-                            'rgb(54, 162, 235)',
-                            'rgb(255, 205, 86)',
-                            'rgb(255, 120, 86)'
-                        ],
-                        hoverOffset: 4
-                    }]
-                };
-                const config = {
-                    type: 'doughnut',
-                    data: data,
-                };
-
-                var myChart = new Chart(ctx, config);
-
-
-            </script>
-           </div>
+                     
+            
         </main>
     </body>
 

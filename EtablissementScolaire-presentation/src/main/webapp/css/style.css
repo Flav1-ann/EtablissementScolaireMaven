@@ -49,3 +49,38 @@ h2 {
   }
 
   }
+
+.card{
+    background-color: white;
+    margin: 2em;
+    border-radius: 1em!important;
+
+}
+.input{
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.btn-form {
+    margin-top: 1em;
+}
+.btn-form-udpate {
+    margin-top: 1em;
+    margin-left: 1rem;
+}
+.btn-center {
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    margin: 2em;
+}
+
+.menu-button {
+margin:1em;
+}
+
+.chart-container{
+background: white;
+}

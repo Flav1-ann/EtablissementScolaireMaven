@@ -48,10 +48,10 @@
             </div>
         </nav>
     <main class="container-fluid">
-        <div class="row">
+        <div class="row h-100">
 
-
-            <div class=" col-12 my-auto">
+            <div class="col-4 d-none d-lg-block"></div>
+            <div class="col-lg-4 col-12 my-auto">
                 <div class="row form_div">
 
                     <table class="table text-center">
@@ -83,6 +83,7 @@
                 </div>
 
             </div>
+            <div class="col-4 d-none d-lg-block"></div>
 
     
 

@@ -21,28 +21,47 @@
     <script type="text/javascript" src="css/app.js" defer></script>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="home.html">Accueil</a>
-            <a class="nav-item nav-link active" href="frmEtudiant.html">Ajouter un étudiant</a>
-            <a class="nav-item nav-link disabled" href="listEtudiant.html">Lister les étudiants</a>
-        </div>
-    </div>
-</nav>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="createUser.jsp">AJOUTER UN ÉTUDIANT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="editEtudiant">ÉDITER UN ÉTUDIANT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="setCourse">ASSOCIER UN COURS À UN ÉTUDIANT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="etudiantList">LISTER LES ÉTUDIANTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="addNoteEtudiant.jsp">AJOUTER UNE NOTE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="stat.jsp">STATISTIQUES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">DÉCONNEXION</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 <main>
     <div class="container-fluid d-flex justify-content-center" >
         <div class="card shadow-lg">
                 <fieldset class="form-row input">
 
-                    <h2>Modification d'un éléve</h2>
+                    <h2>Modification d'un étudiant</h2>
                     <div class="form-group" >
-                        <label for="dropPicker">Sélectionner un étudiant</label>
+                        <label for="dropPicker">Sélectionner un étudiant:</label>
                         <select class="form-control" id="dropPicker">
-                            <option></option>
+                            <option value ="" selected disabled>--</option>
 
                             <% for(Etudiant e : (Set<Etudiant>) session.getAttribute("listEtudiant")){ %>
                                 <option value="<%= e %>"><%= e.getNom() + " " +e.getPrenom() %></option>

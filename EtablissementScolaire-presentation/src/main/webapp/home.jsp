@@ -15,64 +15,47 @@
 </head>
 
 <body>
-  <%
-      if (session.getAttribute("user") != null) {
-          %>
-         <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-           <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse" id="navbarNav">
-           <ul class="navbar-nav">
-             <li class="nav-item">
-               <a class="nav-link" href="createUser.jsp">CRÉER ÉTUDIANT</a>
-             </li>
-             <li class="nav-item">
-               <a class="nav-link" href="setCourse.jsp">ATTRIBUER COURS</a>
-             </li>
-             <li class="nav-item">
-                 <a class="nav-link" href="userList.jsp">LISTE DES ÉTUDIANTS</a>
-               </li>
-             <li class="nav-item">
-                 <a class="nav-link" href="login.jsp">DÉCONNEXION</a>
-               </li>
-           </ul>
-         </div>
-       </nav>
-             <%
-          }
-       %>
-  <main>
-      <div class="container-fluid d-flex justify-content-center" >
-          <div class="card shadow-lg">
-                  <fieldset class="form-row">
-                      <h2>Accueil</h2>
-                          <div class="form-group btn-center">
-                              <a href="createUser.jsp" class="col-12"> <button type="button" class="btn btn-primary btn-form col-12">Ajouter un étudiant</button></a>
-                          </div>
-                          <div class="form-group btn-center ">
-                              <form action="editEtudiant">    <button formmethod="post" type="submit" class="btn btn-primary btn-form col-12">Editer un étudiant</button></form>
-                          </div>
-                          <div class="form-group btn-center">
-                              <form action="setCourse"> <button type="submit" formmethod="post" class="btn btn-primary btn-form col-12">Associer un cours à un étudiant</button></form>
-                          </div>
-                          <div class="form-group btn-center">
-                              <form action="etudiantList">  <button formmethod="get" type="submit" class="btn btn-primary btn-form col-12">Lister les étudiants</button> </form>
-                          </div>
-                          <div class="form-group btn-center">
-                              <a href="addNoteEtudiant.jsp" class="col-12"> <button type="button" class="btn btn-primary btn-form col-12">Ajouter une note</button></a>
-                          </div>
-                          <div class="form-group btn-center">
-                              <a href="stat.jsp" class="col-12"> <button type="button" class="btn btn-primary btn-form col-12">Statistiques</button></a>
-                          </div>
+    <main class="container-fluid">
+        <div class="row h-100">
 
-                          <div class="form-group">
-                              <p id="alert"></p>
-                          </div>
+            <div class="col-4 d-none d-lg-block"></div>
 
-                  </fieldset>
-          </div>
-      </div>
-  </main>
+            <div class="col-lg-4 col-12 my-auto">
+                <div class="row form_div">
+
+                        <div class="row">
+                            <div class="menu-button col-12">
+                                <a href="createUser.jsp" class="col-12"> <button type="button" class="btn btn-primary btn-form col-12">Ajouter un étudiant</button></a>
+                            </div>
+
+                            <div class="menu-button col-12">
+                                <form action="editEtudiant"> <button formmethod="post" type="submit" class="btn btn-primary btn-form col-12">Editer un étudiant</button></form>
+                            </div>
+
+                            <div class="menu-button col-12">
+                                <form action="setCourse"> <button type="submit" formmethod="post" class="btn btn-primary btn-form col-12">Associer un cours à un étudiant</button></form>
+                            </div>
+
+                            <div class="menu-button col-12">
+                                <form action="etudiantList">  <button formmethod="get" type="submit" class="btn btn-primary btn-form col-12">Lister les étudiants</button> </form>
+                            </div>
+
+                            <div class="menu-button col-12">
+                                <a href="addNoteEtudiant.jsp" class="col-12"> <button type="button" class="btn btn-primary btn-form col-12">Ajouter une note</button></a>
+                            </div>
+
+                            <div class="menu-button col-12">
+                                <a href="stat.jsp" class="col-12"> <button type="button" class="btn btn-primary btn-form col-12">Statistiques</button></a>
+                            </div>
+                        </div>
+                </div>
+
+            </div>
+
+            <div class="col-4 d-none d-lg-block"></div>
+
+        </div>
+        </div>
+    </main>
 </body>
 </html>

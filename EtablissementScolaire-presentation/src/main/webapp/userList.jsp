@@ -16,39 +16,42 @@
 </head>
 
 <body>
- <%
-     if (session.getAttribute("user") != null) {
-         %>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#">CRÉER ÉTUDIANT</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">ATTRIBUER COURS</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">LISTE DES ÉTUDIANTS</a>
-              </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">DÉCONNEXION</a>
-              </li>
-          </ul>
-        </div>
-      </nav>
-            <%
-         }
-      %>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="createUser.jsp">AJOUTER UN ÉTUDIANT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="editEtudiant">ÉDITER UN ÉTUDIANT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="setCourse">ASSOCIER UN COURS À UN ÉTUDIANT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="etudiantList">LISTER LES ÉTUDIANTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="addNoteEtudiant.jsp">AJOUTER UNE NOTE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="stat.jsp">STATISTIQUES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">DÉCONNEXION</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     <main class="container-fluid">
-        <div class="row h-100">
+        <div class="row">
 
-            <div class="col-4 d-none d-lg-block"></div>
 
-            <div class="col-lg-4 col-12 my-auto">
+            <div class=" col-12 my-auto">
                 <div class="row form_div">
 
                     <table class="table text-center">
@@ -81,13 +84,9 @@
 
             </div>
 
-            <div class="col-4 d-none d-lg-block"></div>
+    
 
         </div>
-
-
-
-
         </div>
     </main>
 </body>

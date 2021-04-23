@@ -11,33 +11,30 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <script type="text/javascript" src="assets/js/app.js"  defer> </script>
+    <script type="text/javascript" src="css/app.js"  defer> </script>
 </head>
 
 <body>
     <main class="container-fluid">
         <div class="row h-100">
-
             <div class="col-4 d-none d-lg-block"></div>
-
             <div class="col-lg-4 col-12 my-auto">
                 <div class="row form_div">
-
                         <div class="row">
                             <div class="menu-button col-12">
                                 <a href="createUser.jsp" class="col-12"> <button type="button" class="btn btn-primary btn-form col-12">Ajouter un étudiant</button></a>
                             </div>
 
                             <div class="menu-button col-12">
-                                <form action="editEtudiant"> <button formmethod="post" type="submit" class="btn btn-primary btn-form col-12">Editer un étudiant</button></form>
+                                <a href="editEtudiant"> <button formmethod="post" type="submit" class="btn btn-primary btn-form col-12">Editer un étudiant</button></a>
                             </div>
 
                             <div class="menu-button col-12">
-                                <form action="setCourse"> <button type="submit" formmethod="post" class="btn btn-primary btn-form col-12">Associer un cours à un étudiant</button></form>
+                                <a href="setCourse"> <button type="submit" formmethod="post" class="btn btn-primary btn-form col-12">Associer un cours à un étudiant</button></a>
                             </div>
 
                             <div class="menu-button col-12">
-                                <form action="etudiantList">  <button formmethod="get" type="submit" class="btn btn-primary btn-form col-12">Lister les étudiants</button> </form>
+                                <a href="etudiantList">  <button formmethod="get" type="submit" class="btn btn-primary btn-form col-12">Lister les étudiants</button> </a>
                             </div>
 
                             <div class="menu-button col-12">
@@ -48,12 +45,9 @@
                                 <a href="stat.jsp" class="col-12"> <button type="button" class="btn btn-primary btn-form col-12">Statistiques</button></a>
                             </div>
                         </div>
-                </div>
 
             </div>
-
             <div class="col-4 d-none d-lg-block"></div>
-
         </div>
         </div>
     </main>

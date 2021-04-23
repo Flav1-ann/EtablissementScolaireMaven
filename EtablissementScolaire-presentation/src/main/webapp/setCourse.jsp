@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <title>Appli étudiant</title>
     <link href="css/style.css" rel="stylesheet">
-
+    <script type="text/javascript" src="css/app.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 </head>
@@ -62,25 +62,23 @@
                     <form class="student_form col-12">
                         <div class="row">
                             <div class="form-group col-6">
-                                <label for="student-select">Choisir un étudiant:</label>
+                                <label for="studentselect">Choisir un étudiant:</label>
 
-                                <select name="student-select" id="student-select">
+                                <select name="student-select" id="studentselect">
                                     <option value="" selected disabled>--Choisissez un étudiant--</option>
                                     <% for(Etudiant e : (Set<Etudiant>) session.getAttribute("listEtudiant")){ %>
-                                        <option value="<%= e %>"><%= e.getNom() + " " +e.getPrenom() %></option>
+                                        <option value="<%= e.getId() %>"><%= e.getNom() + " " +e.getPrenom() %></option>
                                     <% } %>
                                 </select>
                             </div>
 
                             <div class="form-group col-6">
-                                <label for="course-select">Choisir un cours:</label>
+                                <label for="courseselect">Choisir un cours:</label>
 
-                                <select name="courses" id="course-select">
+                                <select name="courses" id="courseselect">
                                     <option value="" selected disabled>--Choisissez un cours--</option>
                                     <% for(Cours c : (Set<Cours>) session.getAttribute("listCourse")){ %>
-
-                                     <option value="<%= c %>"><%= c.getTheme() %></option>
-
+                                        <option value="<%= c.getId() %>"><%= c.getTheme() %></option>
                                     <% } %>
 
                                 </select>
@@ -91,7 +89,7 @@
                             </div>
 
                             <div class="form_input col-12 ">
-                                <input class="btn btn-primary submit-btn" type="button" value="Envoyer">
+                               <a href="setCourse"><button class="btn btn-primary submit-btn" formmethod="POST" type="submit" id="button" name="button" value="">Envoyer</button></a>
                             </div>
                         </div>
 

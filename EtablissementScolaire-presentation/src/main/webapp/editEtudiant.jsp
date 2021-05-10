@@ -29,6 +29,9 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
+                        <a class="nav-link" href="home.jsp">ACCUEIL</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="createUser.jsp">AJOUTER UN ÉTUDIANT</a>
                     </li>
                     <li class="nav-item">
@@ -101,16 +104,15 @@
                         <label for="email">Email:</label>
                         <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
                     </div>
-
+                        <div class="form_error col-12">
+                            <% if (request.getAttribute("info") !=null) {%>
+                            <p id="form_info_text">${info}</p>
+                            <% request.removeAttribute("info"); } %>
+                        </div>
                     <div class="form-group btn-center" >
                       <button type="submit" class="btn btn-primary btn-form-udpate" formmethod="POST" id="btnUpdate" >Modifier</button>
                     </div>
 
-                        <div class="form_error col-12">
-                            <% if (session.getAttribute("info") !=null) {%>
-                            <p id="form_info_text">${info}</p>
-                            <% session.removeAttribute("info"); } %>
-                        </div>
                 </form>
                 </fieldset>
         </div>

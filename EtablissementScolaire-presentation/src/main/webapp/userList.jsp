@@ -24,6 +24,9 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
+                        <a class="nav-link" href="home.jsp">ACCUEIL</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="createUser.jsp">AJOUTER UN ÉTUDIANT</a>
                     </li>
                     <li class="nav-item">
@@ -82,6 +85,11 @@
                       </table>
                 </div>
 
+            </div>
+            <div class="form_error col-12">
+                <% if (request.getAttribute("error") !=null) {%>
+                <p id="form_info_text">${error}</p>
+                <% request.removeAttribute("error"); } %>
             </div>
             <div class="col-4 d-none d-lg-block"></div>
 

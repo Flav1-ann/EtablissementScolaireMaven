@@ -21,27 +21,23 @@ public class DisconnectServlet extends HttpServlet {
     public void init() {
     }
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        try {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException {
             operations(request,response);
-        } catch (CredentialException1 | NoSuchAlgorithmException e) {
-            request.getRequestDispatcher("erreur.jsp").forward(request,response);
-            e.printStackTrace();
-        }
+
     }
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        try {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws  ServletException {
             operations(request,response);
-        } catch (CredentialException1 | NoSuchAlgorithmException e) {
-            request.getRequestDispatcher("erreur.jsp").forward(request,response);
-            e.printStackTrace();
-        }
+
     }
 
-    protected void operations(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, CredentialException1, NoSuchAlgorithmException {
+    protected void operations(HttpServletRequest request, HttpServletResponse response) throws ServletException{
         HttpSession userSession = request.getSession();
         userSession.removeAttribute("user");
-        request.getRequestDispatcher("login.jsp").forward(request,response);
+        try {
+            request.getRequestDispatcher("login.jsp").forward(request,response);
+        } catch (IOException e) {
+            request.setAttribute("error", e.getMessage());
+        }
     }
 
     public void destroy() {

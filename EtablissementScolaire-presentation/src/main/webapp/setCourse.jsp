@@ -27,6 +27,9 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
+                        <a class="nav-link" href="home.jsp">ACCUEIL</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="createUser.jsp">AJOUTER UN ÉTUDIANT</a>
                     </li>
                     <li class="nav-item">
@@ -85,7 +88,9 @@
                             </div>
 
                             <div class="form_error col-12">
-                                <p id="form_info_text"></p>
+                                <% if (request.getAttribute("error") !=null) {%>
+                                <p id="form_info_text">${error}</p>
+                                <% request.removeAttribute("error"); } %>
                             </div>
 
                             <div class="form_input col-12 ">

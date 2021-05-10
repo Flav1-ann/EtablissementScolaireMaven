@@ -22,30 +22,28 @@ public class ListEtudiantController extends HttpServlet {
     public void init() {
     }
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        try {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             operations(request,response);
-        } catch (CredentialException1 | NoSuchAlgorithmException | AddEtudiantServiceException | GetAllEtudiantServiceException e) {
-            request.getRequestDispatcher("erreur.jsp").forward(request,response);
-            e.printStackTrace();
-        }
+
     }
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        try {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             operations(request,response);
-        } catch (CredentialException1 | NoSuchAlgorithmException | AddEtudiantServiceException | GetAllEtudiantServiceException e) {
-            request.getRequestDispatcher("erreur.jsp").forward(request,response);
-            e.printStackTrace();
-        }
+
     }
 
-    protected void operations(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, CredentialException1, NoSuchAlgorithmException, AddEtudiantServiceException, GetAllEtudiantServiceException {
+    protected void operations(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         EtudiantService etudiantService = new EtudiantService();
         HttpSession userSession = request.getSession();
 
-            Set<Etudiant> List = etudiantService.getAll();
+        Set<Etudiant> List = null;
+        try {
+            List = etudiantService.getAll();
+
             userSession.setAttribute("listEtudiant",List);
-            request.getRequestDispatcher("userList.jsp").forward(request,response);
+        } catch (GetAllEtudiantServiceException  e) {
+            request.setAttribute("error", e.getMessage());
+        }
+        request.getRequestDispatcher("userList.jsp").forward(request,response);
 
     }
 }

@@ -28,44 +28,44 @@ public class AddNoteController extends HttpServlet {
     public void init() {
     }
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        try {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws  ServletException {
             operations(request,response);
-        } catch (NoSuchAlgorithmException | ServiceException | DaoException e) {
-            request.getRequestDispatcher("erreur.jsp").forward(request,response);
-            e.printStackTrace();
-        }
+
     }
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        try {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws  ServletException {
             operations(request,response);
-        } catch (NoSuchAlgorithmException | ServiceException | DaoException e) {
-            request.getRequestDispatcher("erreur.jsp").forward(request,response);
-            e.printStackTrace();
-        }
+
     }
 
-    protected void operations(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, ServiceException, NoSuchAlgorithmException, DaoException {
+    protected void operations(HttpServletRequest request, HttpServletResponse response) throws ServletException {
 
         EtudiantService etudiantService = new EtudiantService();
         MatiereService matiereService = new MatiereService();
         NoteEleveService noteEleveService = new NoteEleveService();
+        try {
 
-        HttpSession userSession = request.getSession();
+            HttpSession userSession = request.getSession();
 
-        Set<Matiere> listeCours = matiereService.getAll();
-        userSession.setAttribute("listCourse",listeCours);
+            Set<Matiere> listeCours = null;
+                listeCours = matiereService.getAll();
 
-        Set<Etudiant> List = etudiantService.getAll();
-        userSession.setAttribute("listEtudiant",List);
+            userSession.setAttribute("listCourse",listeCours);
 
-        if (request.getParameter("button")!= null ){
-            NoteEleve noteEleve = new NoteEleve(1, Integer.parseInt(request.getParameter("button").split(" ")[2]));
-            noteEleveService.addNoteEleve(noteEleve,etudiantService.get(Integer.parseInt(request.getParameter("button").split(" ")[1])),matiereService.get(Integer.parseInt(request.getParameter("button").split(" ")[0])));
+            Set<Etudiant> List = null;
+
+                List = etudiantService.getAll();
+
+            userSession.setAttribute("listEtudiant",List);
+
+            if (request.getParameter("button")!= null ){
+                NoteEleve noteEleve = new NoteEleve(1, Integer.parseInt(request.getParameter("button").split(" ")[2]));
+                noteEleveService.addNoteEleve(noteEleve,etudiantService.get(Integer.parseInt(request.getParameter("button").split(" ")[1])),matiereService.get(Integer.parseInt(request.getParameter("button").split(" ")[0])));
+            }
+
+            request.getRequestDispatcher("addNoteEtudiant.jsp").forward(request,response);
+        } catch (ServiceException | DaoException | IOException e) {
+            request.setAttribute("info",e.getMessage());
         }
-
-        request.getRequestDispatcher("addNoteEtudiant.jsp").forward(request,response);
-
     }
 
     public void destroy() {

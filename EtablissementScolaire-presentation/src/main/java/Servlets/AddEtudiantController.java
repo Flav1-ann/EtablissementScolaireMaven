@@ -21,33 +21,28 @@ public class AddEtudiantController extends HttpServlet {
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        try {
             operations(request, response);
-        } catch (CredentialException1 | NoSuchAlgorithmException | AddEtudiantServiceException e) {
-            request.getRequestDispatcher("erreur.jsp").forward(request, response);
-            e.printStackTrace();
-        }
+
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        try {
             operations(request, response);
-        } catch (CredentialException1 | NoSuchAlgorithmException | AddEtudiantServiceException e) {
-            request.getRequestDispatcher("erreur.jsp").forward(request, response);
-            e.printStackTrace();
-        }
+
     }
 
-    protected void operations(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, CredentialException1, NoSuchAlgorithmException, AddEtudiantServiceException {
+    protected void operations(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         EtudiantService etudiantService = new EtudiantService();
         HttpSession userSession = request.getSession();
+        try {
+
 
         Etudiant etudiant = new Etudiant(request.getParameter("lastname"), request.getParameter("email"), request.getParameter("address"), request.getParameter("phone"), request.getParameter("firstName"), "", "", null);
         int ret;
         if(etudiant.getNom() == null || etudiant.getPrenom() == null || etudiant.getEmail() == null || etudiant.getTelephone() == null || etudiant.getAdresse() == null){
             ret = -2;
         } else {
-            ret = etudiantService.create(etudiant);
+
+                ret = etudiantService.create(etudiant);
         }
 
         if (ret == 0) {
@@ -57,9 +52,14 @@ public class AddEtudiantController extends HttpServlet {
             userSession.setAttribute("info", "Erreur lors de la creation de l'étudiant");
             request.getRequestDispatcher("createUser.jsp").forward(request, response);
         } else if (ret == -2){
-            userSession.setAttribute("info", "Veuillez remplir tous les champs");
-            request.getRequestDispatcher("createUser.jsp").forward(request, response);
+            request.setAttribute("info", "Veuillez remplir tous les champs");
         }
+
+        } catch (AddEtudiantServiceException | CredentialException1 e) {
+            request.setAttribute("info", e.getMessage());
+
+        }
+        request.getRequestDispatcher("createUser.jsp").forward(request, response);
 
 
     }

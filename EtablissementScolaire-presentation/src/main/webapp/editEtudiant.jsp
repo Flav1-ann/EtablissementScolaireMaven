@@ -74,17 +74,17 @@
 
                     <div class="form-group input">
                         <label for="name">Nom:</label>
-                        <input  class="form-control" id="name" placeholder="Nom" name="name">
+                        <input  class="form-control" id="name" placeholder="Nom" name="lastName">
                     </div>
 
                     <div class="form-group input">
                         <label for="lastName">Prénom:</label>
-                        <input  class="form-control" id="lastName" placeholder="Prénom" name="lastName">
+                        <input  class="form-control" id="lastName" placeholder="Prénom" name="firstName">
                     </div>
 
                     <div class="form-group input">
                         <label for="address">Adresse:</label>
-                        <input  class="form-control" id="address" placeholder="Adresse" name="adress">
+                        <input  class="form-control" id="address" placeholder="Adresse" name="address">
                     </div>
 
                     <div class="form-group input">
@@ -94,7 +94,7 @@
 
                     <div class="form-group input">
                         <label for="birthday">Date de naissance:</label>
-                        <input type="date" class="form-control" id="birthday" placeholder="Date de naissance" name="birthday">
+                        <input type="date" class="form-control" id="birthday" placeholder="Date de naissance" name="birthDate">
                     </div>
 
                     <div class="form-group input">
@@ -104,12 +104,13 @@
 
                     <div class="form-group btn-center" >
                       <button type="submit" class="btn btn-primary btn-form-udpate" formmethod="POST" id="btnUpdate" >Modifier</button>
-                        <button type="button" class="btn btn-danger btn-form-udpate" id="">Annuler</button>
                     </div>
 
-                    <div class="form-group">
-                        <p id="alert"></p>
-                    </div>
+                        <div class="form_error col-12">
+                            <% if (session.getAttribute("info") !=null) {%>
+                            <p id="form_info_text">${info}</p>
+                            <% session.removeAttribute("info"); } %>
+                        </div>
                 </form>
                 </fieldset>
         </div>

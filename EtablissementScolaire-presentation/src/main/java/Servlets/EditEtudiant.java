@@ -46,17 +46,24 @@ public class EditEtudiant extends HttpServlet {
     protected void operations(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, CredentialException1, NoSuchAlgorithmException, AddEtudiantServiceException, GetAllEtudiantServiceException, UpdateEtudiantServiceException, ParseException {
         EtudiantService etudiantService = new EtudiantService();
         HttpSession userSession = request.getSession();
-        if(request.getParameter("id") != null){
-//            String birthDay = request.getParameter("birthday");
-//            Date birthDate=new SimpleDateFormat("yyyy-MM-dd").parse(birthDay);
-//            java.sql.Date sqlDate = java.sql.Date.valueOf( birthDate );
-            Etudiant etudiant = new Etudiant(Integer.parseInt(request.getParameter("id")),request.getParameter("name"),request.getParameter("email"),request.getParameter("adress"),request.getParameter("phone"),request.getParameter("lastName"),null,null,null);
-           etudiantService.update(etudiant);
-
-        }
         Set<Etudiant> List = etudiantService.getAll();
         userSession.setAttribute("listEtudiant",List);
-        request.getRequestDispatcher("editEtudiant.jsp").forward(request,response);
+
+        if(request.getParameter("id") != null && !request.getParameter("id").equals("")){
+            Etudiant etudiant = new Etudiant(request.getParameter("firstName"), request.getParameter("email"), request.getParameter("address"), request.getParameter("phone"), request.getParameter("lastName"), "", "", null);
+           System.out.println(etudiant);
+            if(etudiant.getNom() == null  || etudiant.getPrenom() == null || etudiant.getEmail() == null || etudiant.getTelephone() == null || etudiant.getAdresse() == null ){
+                userSession.setAttribute("info", "Veuillez remplir tous les champs");
+            } else {
+                userSession.setAttribute("info", "Modification réussie");
+                etudiantService.update(etudiant);
+            }
+            request.getRequestDispatcher("editEtudiant.jsp").forward(request,response);
+
+        } else {
+            userSession.setAttribute("info", "Veuillez sélectionnez un étudiant");
+            request.getRequestDispatcher("editEtudiant.jsp").forward(request,response);
+        }
 
     }
 }

@@ -9,12 +9,7 @@ if (document.getElementById("dropPicker") != null)
         fildForm()
     });
 
-if (document.getElementById("btnUpdate") != null)
-    document.getElementById("btnUpdate").addEventListener("click",() =>{
-    document.getElementById("alert").innerHTML = "L'étudiant à été modifier";
-    document.getElementById("alert").style.color = "green";
 
-});
 
 
 function fildForm() {

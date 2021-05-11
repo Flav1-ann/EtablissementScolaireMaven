@@ -15,10 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
+import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.Set;
 
 @WebServlet(name = "editEtudiant", value = "/editEtudiant")
@@ -45,13 +45,18 @@ public class EditEtudiant extends HttpServlet {
         userSession.setAttribute("listEtudiant",List);
 
         if(request.getParameter("id") != null && !request.getParameter("id").equals("")){
-            Etudiant etudiant = new Etudiant(Integer.parseInt(request.getParameter("id")),request.getParameter("firstName"), request.getParameter("email"), request.getParameter("address"), request.getParameter("phone"), request.getParameter("lastName"), "", "", null);
-           System.out.println(etudiant);
+            Date date = null;
+            if(request.getParameter("birthDate") != null && !request.getParameter("birthDate").equals("")){
+                date = Date.valueOf(request.getParameter("birthDate"));
+            }
+            Etudiant etudiant = new Etudiant(Integer.parseInt(request.getParameter("id")),request.getParameter("firstName"), request.getParameter("email"), request.getParameter("address"), request.getParameter("phone"), request.getParameter("lastName"), "", "", date);
+
             if(etudiant.getNom() == null  || etudiant.getPrenom() == null || etudiant.getEmail() == null || etudiant.getTelephone() == null || etudiant.getAdresse() == null ){
                 request.setAttribute("info", "Veuillez remplir tous les champs");
             } else {
                 request.setAttribute("info", "Modification réussie");
                 etudiantService.update(etudiant);
+
             }
             request.getRequestDispatcher("editEtudiant.jsp").forward(request,response);
 

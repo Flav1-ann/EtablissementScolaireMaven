@@ -88,8 +88,8 @@
                                 </div>
 
                                 <div class="form-group col-12">
-                                    <label for="email">Email</label>
-                                    <input type="text" placeholder="email" class="form-control" name="email" id="email">
+                                    <label for="email">Email:</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
                                 </div>
 
                                 <div class="form_error col-12">

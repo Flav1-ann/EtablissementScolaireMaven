@@ -68,9 +68,15 @@
 
                             <% for(Etudiant e : (Set<Etudiant>) session.getAttribute("listEtudiant")){ %>
                                 <option value="<%= e %>"><%= e.getNom() + " " +e.getPrenom() %></option>
+
                             <% } %>
 
+
+
                         </select>
+                        <% for(Etudiant e : (Set<Etudiant>) session.getAttribute("listEtudiant")){ %>
+                        <input type="hidden" id="<%= e.getId() %>" value="<%= e.getDateNaissance() %>">
+                        <% } %>
                     </div>
                     <form action="editEtudiant">
                     <input type="hidden" class="form-control" id="id" placeholder="id" name="id">
@@ -96,8 +102,8 @@
                     </div>
 
                     <div class="form-group input">
-                        <label for="birthday">Date de naissance:</label>
-                        <input type="date" class="form-control" id="birthday" placeholder="Date de naissance" name="birthDate">
+                        <label for="birthDate">Date de naissance:</label>
+                        <input type="date" class="form-control" id="birthDate" placeholder="Date de naissance" name="birthDate">
                     </div>
 
                     <div class="form-group input">

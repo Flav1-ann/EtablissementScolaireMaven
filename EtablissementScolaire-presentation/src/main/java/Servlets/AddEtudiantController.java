@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
+import java.sql.Date;
 
 
 @WebServlet(name = "etudiantAdd", value = "/etudiantAdd")
@@ -34,9 +35,11 @@ public class AddEtudiantController extends HttpServlet {
         EtudiantService etudiantService = new EtudiantService();
         HttpSession userSession = request.getSession();
         try {
-
-
-        Etudiant etudiant = new Etudiant(request.getParameter("lastName"), request.getParameter("email"), request.getParameter("address"), request.getParameter("phone"), request.getParameter("firstName"), "", "", null);
+            Date date = null;
+            if(request.getParameter("birthDate") != null && !request.getParameter("birthDate").equals("")){
+                 date = Date.valueOf(request.getParameter("birthDate"));
+            }
+        Etudiant etudiant = new Etudiant(request.getParameter("lastName"), request.getParameter("email"), request.getParameter("address"), request.getParameter("phone"), request.getParameter("firstName"), "", "", date);
         int ret;
         if(etudiant.getNom() == null || etudiant.getPrenom() == null || etudiant.getEmail() == null || etudiant.getTelephone() == null || etudiant.getAdresse() == null){
             ret = -2;
@@ -60,7 +63,6 @@ public class AddEtudiantController extends HttpServlet {
             request.setAttribute("info", e.getMessage());
             request.getRequestDispatcher("createUser.jsp").forward(request, response);
         }
-
 
 
     }

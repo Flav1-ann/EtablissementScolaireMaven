@@ -21,16 +21,16 @@ public class AuthServlet extends HttpServlet {
     public void init() {
     }
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             operations(request,response);
 
     }
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws  ServletException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             operations(request,response);
 
     }
 
-    protected void operations(HttpServletRequest request, HttpServletResponse response) throws ServletException{
+    protected void operations(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession userSession = request.getSession();
         try {
         String email = request.getParameter("login");
@@ -49,6 +49,7 @@ public class AuthServlet extends HttpServlet {
             request.getRequestDispatcher("home.jsp").forward(request,response);
         } catch (CredentialException1 | NoSuchAlgorithmException | IOException e){
             request.setAttribute("error", e.getMessage());
+            request.getRequestDispatcher("login.jsp").forward(request,response);
         }
     }
 

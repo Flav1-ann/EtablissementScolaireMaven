@@ -15,6 +15,7 @@ if (document.getElementById("dropPicker") != null)
 function fildForm() {
     document.getElementById("form_info_text").textContent = "";
     let etu = new  Etudiant()
+
     document.querySelector('select').value.split("\n").forEach((val) => {
         switch (val.split("=")[0]) {
             case "id":
@@ -35,26 +36,29 @@ function fildForm() {
             case "adresse":
                 etu.address = val.split("=")[1];
                 break;
+
         }
     });
+    etu.birthDate = document.getElementById(etu.id).value;
     document.getElementById("id").value = etu.id;
     document.getElementById("name").value = etu.name;
     document.getElementById("lastName").value = etu.lastName;
     document.getElementById("address").value = etu.address;
-    document.getElementById("phone").value = etu.phone;
-    document.getElementById("birthday").value = etu.birthday;
     document.getElementById("email").value = etu.email;
+    document.getElementById("birthDate").value = etu.birthDate;
+    document.getElementById("phone").value = etu.phone;
+    console.log(etu);
 }
 
 class Etudiant {
 
-    constructor(id,name,lastName,address,phone,birthday,email) {
+    constructor(id,name,lastName,address,phone,birthDate,email) {
         this._id = id;
         this._name = name;
         this._lastName = lastName;
         this._address = address;
         this._phone = phone;
-        this._birthday = birthday;
+        this._birthDate = birthDate;
         this._email = email;
     }
 
@@ -98,12 +102,12 @@ class Etudiant {
         this._phone = value;
     }
 
-    get birthday() {
-        return this._birthday;
+    get birthDate() {
+        return this._birthDate;
     }
 
-    set birthday(value) {
-        this._birthday = value;
+    set birthDate(value) {
+        this._birthDate = value;
     }
 
     get email() {

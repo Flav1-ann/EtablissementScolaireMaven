@@ -63,7 +63,7 @@
 
                 <div class="col-lg-4 col-12 my-auto">
                   <div class="row form_div">
-                    <h2 class="col-12">Attribuer un cours à un étudiant</h2>
+                    <h2 class="col-12">Attribuer un note à un étudiant</h2>
                     <form class="student_form col-12">
                       <div class="row">
                         <div class="form-group col-12">
@@ -97,7 +97,7 @@
                           <label for="noteselect">Choisir une note:</label>
 
                           <select name="noteselect" id="noteselect">
-                            <option value="note" selected disabled> -- note --</option>
+                            <option value="note" selected disabled> -- Note --</option>
                             <% for(int i=0; i<=20; i++){ %>
                               <option value="<%= i %>">
                                 <%= i %>

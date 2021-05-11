@@ -6,7 +6,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <!DOCTYPE html>
     <html lang="fr">
-
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,7 +55,6 @@
                 </ul>
             </div>
         </nav>
-
         <main class="container-fluid">
 
             <div class="row">
@@ -80,11 +78,6 @@
                     }
 
                 %>
-                <div class="form_error col-12">
-                    <% if (request.getAttribute("error") !=null) {%>
-                    <p id="form_info_text">${error}</p>
-                    <% request.removeAttribute("error"); } %>
-                </div>
                 <script>
                     var ctx = document.getElementById('myChart').getContext('2d');
                     var myChart = new Chart(ctx, {
@@ -123,9 +116,7 @@
     
                 </script>
                 <div class="col-2"></div>
-
                 <div class="col-5 chart-container">
-    
                     <canvas id="myChart2" width="800" height="450"></canvas>
                 </div>
                 <script>
@@ -153,13 +144,14 @@
     
     
                 </script>
-
+                <div class="form_error col-12">
+                    <% if (request.getAttribute("error") !=null) {%>
+                    <p id="form_info_text">${error}</p>
+                    <% request.removeAttribute("error"); } %>
+                </div>
             </div>
 
             
         </main>
     </body>
-
-
-
     </html>

@@ -13,7 +13,7 @@ if (document.getElementById("dropPicker") != null)
 
 
 function fildForm() {
-
+    document.getElementById("form_info_text").textContent = "";
     let etu = new  Etudiant()
     document.querySelector('select').value.split("\n").forEach((val) => {
         switch (val.split("=")[0]) {

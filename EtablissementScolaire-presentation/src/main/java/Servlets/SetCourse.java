@@ -46,12 +46,17 @@ public class SetCourse extends HttpServlet {
                 listeCours = coursService.getAll();
 
             userSession.setAttribute("listCourse",listeCours);
+            request.setAttribute("error", "");
 
             Set<Etudiant> List = etudiantService.getAll();
             userSession.setAttribute("listEtudiant",List);
-
-            if (request.getParameter("button")!= null ){
+            if (request.getParameter("error") != null){
+                request.setAttribute("error", "");
+            }
+            if (request.getParameter("button") != null && !request.getParameter("button").isEmpty() && request.getParameter("button").split(" ").length >= 2){
                 coursService.inscription(coursService.get(Integer.parseInt(request.getParameter("button").split(" ")[0]) ),etudiantService.get(Integer.parseInt(request.getParameter("button").split(" ")[1])));
+                request.setAttribute("error", "Attribution du cour à réussi");
+
             }
 
         } catch (GetAllCoursServiceException | GetAllEtudiantServiceException | GetCoursServiceException |  GetEtudiantServiceException | InscriptionCoursServiceException e) {

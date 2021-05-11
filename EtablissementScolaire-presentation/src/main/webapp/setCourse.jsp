@@ -88,7 +88,7 @@
                             </div>
 
                             <div class="form_error col-12">
-                                <% if (request.getAttribute("error") !=null) {%>
+                                <% if (request.getAttribute("error") != null) {%>
                                 <p id="form_info_text">${error}</p>
                                 <% request.removeAttribute("error"); } %>
                             </div>

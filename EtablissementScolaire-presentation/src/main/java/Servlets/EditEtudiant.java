@@ -45,7 +45,7 @@ public class EditEtudiant extends HttpServlet {
         userSession.setAttribute("listEtudiant",List);
 
         if(request.getParameter("id") != null && !request.getParameter("id").equals("")){
-            Etudiant etudiant = new Etudiant(request.getParameter("firstName"), request.getParameter("email"), request.getParameter("address"), request.getParameter("phone"), request.getParameter("lastName"), "", "", null);
+            Etudiant etudiant = new Etudiant(Integer.parseInt(request.getParameter("id")),request.getParameter("firstName"), request.getParameter("email"), request.getParameter("address"), request.getParameter("phone"), request.getParameter("lastName"), "", "", null);
            System.out.println(etudiant);
             if(etudiant.getNom() == null  || etudiant.getPrenom() == null || etudiant.getEmail() == null || etudiant.getTelephone() == null || etudiant.getAdresse() == null ){
                 request.setAttribute("info", "Veuillez remplir tous les champs");

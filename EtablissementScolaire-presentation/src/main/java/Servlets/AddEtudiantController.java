@@ -36,7 +36,7 @@ public class AddEtudiantController extends HttpServlet {
         try {
 
 
-        Etudiant etudiant = new Etudiant(request.getParameter("lastname"), request.getParameter("email"), request.getParameter("address"), request.getParameter("phone"), request.getParameter("firstName"), "", "", null);
+        Etudiant etudiant = new Etudiant(request.getParameter("lastName"), request.getParameter("email"), request.getParameter("address"), request.getParameter("phone"), request.getParameter("firstName"), "", "", null);
         int ret;
         if(etudiant.getNom() == null || etudiant.getPrenom() == null || etudiant.getEmail() == null || etudiant.getTelephone() == null || etudiant.getAdresse() == null){
             ret = -2;
@@ -53,13 +53,14 @@ public class AddEtudiantController extends HttpServlet {
             request.getRequestDispatcher("createUser.jsp").forward(request, response);
         } else if (ret == -2){
             request.setAttribute("info", "Veuillez remplir tous les champs");
+            request.getRequestDispatcher("createUser.jsp").forward(request, response);
         }
 
         } catch (AddEtudiantServiceException | CredentialException1 e) {
             request.setAttribute("info", e.getMessage());
-
+            request.getRequestDispatcher("createUser.jsp").forward(request, response);
         }
-        request.getRequestDispatcher("createUser.jsp").forward(request, response);
+
 
 
     }
